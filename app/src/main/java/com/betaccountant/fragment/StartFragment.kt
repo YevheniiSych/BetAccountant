@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
+import com.betaccountant.enum.Level
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_start.*
 
@@ -21,7 +22,7 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        startBtn.setOnClickListener { (activity as MainActivity).navController?.navigate(R.id.firstLevelFragment) }
+        startBtn.setOnClickListener { (activity as MainActivity).navigateToLevel(Level.FIRST) }
         activity?.toolbar?.setLabel(R.string.app_name)
     }
 }

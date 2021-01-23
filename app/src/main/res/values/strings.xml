@@ -6,4 +6,5 @@
     <string name="exit_dialog_title">Ви дійсно бажаєте вийти?</string>
     <string name="yes">так</string>
     <string name="no">ні</string>
+    <string name="completed_levels">Рівень %d/8</string>
 </resources>

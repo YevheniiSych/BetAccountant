@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.betaccountant.enum.Level
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,20 @@ class MainActivity : AppCompatActivity() {
         } else {
             showExitDialog()
         }
+    }
+
+    fun navigateToLevel(nextLevel: Level){
+        when(nextLevel){
+            Level.FIRST -> navController?.navigate(R.id.firstLevelFragment)
+            Level.SECOND -> TODO()
+            Level.THIRD -> TODO()
+            Level.FOURTH -> TODO()
+            Level.FIVES -> TODO()
+            Level.SIXTH -> TODO()
+            Level.SEVENTH -> TODO()
+            Level.EIGHTH -> TODO()
+        }
+        toolbar?.setLabel(getString(R.string.completed_levels, nextLevel.value))
     }
 
     private fun showExitDialog() {

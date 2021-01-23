@@ -10,9 +10,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/purple_200"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        android:background="@color/purple_200"/>
+        tools:layout_editor_absoluteX="0dp" />
 
     <fragment
         android:id="@+id/fragment_container"

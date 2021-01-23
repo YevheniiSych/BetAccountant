@@ -16,11 +16,21 @@ class ToolbarView @JvmOverloads constructor(
 
     private var attrs: AttributeSet? = attrs
     private var label: TextView? = null
+    private var timeCounter: TextView? = null
 
     init {
         val view = View.inflate(context, R.layout.layout_toolbar_view, this)
         label = view.toolbarLabel
+        timeCounter = view.toolbarTimeCounter
         readParams(context)
+    }
+
+    fun setTimeCounterText(timeCounterText: String?) {
+        timeCounter?.text = timeCounterText
+    }
+
+    fun timeCounterEnabled(enabled: Boolean) {
+        timeCounter?.visibility = if (enabled) View.VISIBLE else View.GONE
     }
 
     fun setLabel(labelTxt: String?) {
@@ -42,7 +52,9 @@ class ToolbarView @JvmOverloads constructor(
             0, 0
         )
         try {
-            label?.text = attributes.getString(R.styleable.ToolbarView_label)
+            setLabel(attributes.getString(R.styleable.ToolbarView_label))
+            timeCounterEnabled(attributes.getBoolean(R.styleable.ToolbarView_time_counter_enabled, false))
+            setTimeCounterText(attributes.getString(R.styleable.ToolbarView_time_counter_text))
         } finally {
             attributes.recycle()
         }

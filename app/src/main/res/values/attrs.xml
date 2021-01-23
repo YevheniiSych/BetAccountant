@@ -2,5 +2,7 @@
 <resources>
     <declare-styleable name="ToolbarView">
         <attr name="label" format="string"/>
+        <attr name="time_counter_enabled" format="boolean"/>
+        <attr name="time_counter_text" format="string"/>
     </declare-styleable>
 </resources>

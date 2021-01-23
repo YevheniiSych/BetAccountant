@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Бет бухгалтер</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="exit_dialog_message">Увесь прогрес буде втрачено.</string>
     <string name="exit_dialog_title">Ви дійсно бажаєте вийти?</string>

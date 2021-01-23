@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
-import com.betaccountant.enum.Level
+import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_start.*
 

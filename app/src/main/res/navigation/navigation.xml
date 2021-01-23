@@ -10,10 +10,54 @@
         android:name="com.betaccountant.fragment.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" />
+
     <fragment
         android:id="@+id/firstLevelFragment"
         android:name="com.betaccountant.fragment.FirstLevelFragment"
         android:label="fragment_first_level"
         tools:layout="@layout/fragment_first_level" />
+
+    <fragment
+        android:id="@+id/secondLevelFragment"
+        android:name="com.betaccountant.fragment.SecondLevel"
+        android:label="fragment_second_level"
+        tools:layout="@layout/fragment_second_level" />
+
+    <fragment
+        android:id="@+id/thirdLevelFragment"
+        android:name="com.betaccountant.fragment.ThirdLevel"
+        android:label="fragment_third_level"
+        tools:layout="@layout/fragment_third_level" />
+
+    <fragment
+        android:id="@+id/fourthLevelFragment"
+        android:name="com.betaccountant.fragment.FourthLevel"
+        android:label="fragment_fourth_level"
+        tools:layout="@layout/fragment_fourth_level" />
+
+    <fragment
+        android:id="@+id/fivesLevelFragment"
+        android:name="com.betaccountant.fragment.FivesLevel"
+        android:label="fragment_fives_level"
+        tools:layout="@layout/fragment_fives_level" />
+
+    <fragment
+        android:id="@+id/sixthLevelFragment"
+        android:name="com.betaccountant.fragment.SixthLevel"
+        android:label="fragment_sixth_level"
+        tools:layout="@layout/fragment_sixth_level" />
+
+    <fragment
+        android:id="@+id/seventhLevelFragment"
+        android:name="com.betaccountant.fragment.SeventhLevel"
+        android:label="fragment_seventh_level"
+        tools:layout="@layout/fragment_seventh_level" />
+
+    <fragment
+        android:id="@+id/eighthLevelFragment"
+        android:name="com.betaccountant.fragment.EighthLevel"
+        android:label="fragment_eighth_level"
+        tools:layout="@layout/fragment_eighth_level" />
+
 
 </navigation>

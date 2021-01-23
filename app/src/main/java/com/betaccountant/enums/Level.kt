@@ -1,4 +1,4 @@
-package com.betaccountant.enum
+package com.betaccountant.enums
 
 enum class Level(val value: Int) {
     FIRST(1),

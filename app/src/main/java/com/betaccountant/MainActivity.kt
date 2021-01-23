@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.betaccountant.enum.Level
+import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
     fun navigateToLevel(nextLevel: Level){
         when(nextLevel){
             Level.FIRST -> navController?.navigate(R.id.firstLevelFragment)
-            Level.SECOND -> TODO()
-            Level.THIRD -> TODO()
-            Level.FOURTH -> TODO()
-            Level.FIVES -> TODO()
-            Level.SIXTH -> TODO()
-            Level.SEVENTH -> TODO()
-            Level.EIGHTH -> TODO()
+            Level.SECOND -> navController?.navigate(R.id.secondLevelFragment)
+            Level.THIRD -> navController?.navigate(R.id.thirdLevelFragment)
+            Level.FOURTH -> navController?.navigate(R.id.fourthLevelFragment)
+            Level.FIVES -> navController?.navigate(R.id.fivesLevelFragment)
+            Level.SIXTH -> navController?.navigate(R.id.sixthLevelFragment)
+            Level.SEVENTH -> navController?.navigate(R.id.seventhLevelFragment)
+            Level.EIGHTH -> navController?.navigate(R.id.eighthLevelFragment)
         }
         toolbar?.setLabel(getString(R.string.completed_levels, nextLevel.value))
     }

@@ -27,6 +27,10 @@ class ToolbarView @JvmOverloads constructor(
         label?.text = labelTxt
     }
 
+    fun setLabel(stringId: Int) {
+        label?.text = resources.getString(stringId)
+    }
+
     fun getLabel(): String {
         return label?.text.toString()
     }

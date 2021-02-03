@@ -21,6 +21,7 @@ class FirstLevelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.toolbar?.timeCounterEnabled(true)
+        activity?.toolbar?.resetTimeCounter()
         activity?.toolbar?.startTimeCounter()
     }
 }

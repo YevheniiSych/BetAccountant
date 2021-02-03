@@ -1,6 +1,7 @@
 package com.betaccountant.view
 
 import android.content.Context
+import android.os.SystemClock
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Chronometer
@@ -35,7 +36,7 @@ class ToolbarView @JvmOverloads constructor(
     }
 
     fun resetTimeCounter(){
-
+        timeCounter?.base = SystemClock.elapsedRealtime()
     }
 
     fun timeCounterEnabled(enabled: Boolean) {

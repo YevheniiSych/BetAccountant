@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun navigateToLevel(nextLevel: Level){
-        when(nextLevel){
+    fun navigateToLevel(nextLevel: Level) {
+        when (nextLevel) {
             Level.FIRST -> navController?.navigate(R.id.firstLevelFragment)
             Level.SECOND -> navController?.navigate(R.id.secondLevelFragment)
             Level.THIRD -> navController?.navigate(R.id.thirdLevelFragment)
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         alertBuilder.apply {
             setMessage(R.string.exit_dialog_message)
             setCancelable(true)
-            setPositiveButton(R.string.yes) { _, _ -> finish()}
+            setPositiveButton(R.string.yes) { _, _ -> finish() }
             setNegativeButton(R.string.no) { _, _ -> }
         }
         val alert = alertBuilder.create()

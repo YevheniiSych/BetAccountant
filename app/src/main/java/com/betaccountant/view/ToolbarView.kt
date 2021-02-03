@@ -3,6 +3,7 @@ package com.betaccountant.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.widget.Chronometer
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.betaccountant.R
@@ -16,7 +17,7 @@ class ToolbarView @JvmOverloads constructor(
 
     private var attrs: AttributeSet? = attrs
     private var label: TextView? = null
-    private var timeCounter: TextView? = null
+    private var timeCounter: Chronometer? = null
 
     init {
         val view = View.inflate(context, R.layout.layout_toolbar_view, this)
@@ -25,8 +26,16 @@ class ToolbarView @JvmOverloads constructor(
         readParams(context)
     }
 
-    fun setTimeCounterText(timeCounterText: String?) {
-        timeCounter?.text = timeCounterText
+    fun startTimeCounter(){
+        timeCounter?.start()
+    }
+
+    fun pauseTimeCounter(){
+        timeCounter?.stop()
+    }
+
+    fun resetTimeCounter(){
+
     }
 
     fun timeCounterEnabled(enabled: Boolean) {
@@ -54,7 +63,6 @@ class ToolbarView @JvmOverloads constructor(
         try {
             setLabel(attributes.getString(R.styleable.ToolbarView_label))
             timeCounterEnabled(attributes.getBoolean(R.styleable.ToolbarView_time_counter_enabled, false))
-            setTimeCounterText(attributes.getString(R.styleable.ToolbarView_time_counter_text))
         } finally {
             attributes.recycle()
         }

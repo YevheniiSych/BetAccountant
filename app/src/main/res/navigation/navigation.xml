@@ -18,12 +18,6 @@
         tools:layout="@layout/fragment_first_level" />
 
     <fragment
-        android:id="@+id/secondLevelFragment"
-        android:name="com.betaccountant.fragment.SecondLevel"
-        android:label="fragment_second_level"
-        tools:layout="@layout/fragment_second_level" />
-
-    <fragment
         android:id="@+id/thirdLevelFragment"
         android:name="com.betaccountant.fragment.ThirdLevel"
         android:label="fragment_third_level"

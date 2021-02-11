@@ -10,6 +10,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        const val FRAGMENT_LEVEL = "FRAGMENT_LEVEL"
+    }
+
     var navController: NavController? = null
         private set
 
@@ -29,8 +33,11 @@ class MainActivity : AppCompatActivity() {
 
     fun navigateToLevel(nextLevel: Level) {
         when (nextLevel) {
-            Level.FIRST -> navController?.navigate(R.id.firstLevelFragment)
-            Level.SECOND -> navController?.navigate(R.id.secondLevelFragment)
+            Level.FIRST, Level.SECOND -> {
+                val bundle = Bundle()
+                bundle.putSerializable(FRAGMENT_LEVEL, nextLevel)
+                navController?.navigate(R.id.firstLevelFragment, bundle)
+            }
             Level.THIRD -> navController?.navigate(R.id.thirdLevelFragment)
             Level.FOURTH -> navController?.navigate(R.id.fourthLevelFragment)
             Level.FIVES -> navController?.navigate(R.id.fivesLevelFragment)

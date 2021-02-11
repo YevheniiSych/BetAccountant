@@ -7,8 +7,20 @@
     android:background="@android:color/transparent"
     tools:context="fragment.FirstLevelFragment">
 
+    <TextView
+        android:id="@+id/questionTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintWidth_percent="0.9"
+        android:textSize="16sp"/>
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/questionImg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@color/black"
@@ -16,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionTxt"
         app:layout_constraintVertical_bias="0.109"
         app:layout_constraintWidth_percent="0.9" />
 
@@ -31,13 +43,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/questionImg"
         app:layout_constraintVertical_bias="0.34" />
 
-    <include
-        layout="@layout/answer_button_layout"
+    <Button
+        android:id="@+id/answerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/answer_button_background"
+        android:gravity="center"
+        android:text="@string/answer"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

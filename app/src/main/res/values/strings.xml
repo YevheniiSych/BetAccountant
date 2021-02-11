@@ -6,4 +6,6 @@
     <string name="yes">так</string>
     <string name="no">ні</string>
     <string name="completed_levels">Рівень %d/8</string>
+    <string name="answer">Відповісти</string>
+    <string name="input_answer">Ввести відповідь</string>
 </resources>

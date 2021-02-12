@@ -22,7 +22,7 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        startBtn.setOnClickListener { (activity as MainActivity).navigateToLevel(Level.SECOND) }
+        startBtn.setOnClickListener { (activity as MainActivity).navigateToLevel(Level.FIRST) }
         activity?.toolbar?.setLabel(R.string.app_name)
     }
 }

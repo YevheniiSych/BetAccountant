@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/firstLevelFragment"
-        android:name="com.betaccountant.fragment.FirstLevelFragment"
+        android:name="com.betaccountant.fragment.ImageQuestionLevelFragment"
         android:label="fragment_first_level"
-        tools:layout="@layout/fragment_first_level" />
+        tools:layout="@layout/fragment_image_question_level" />
 
     <fragment
         android:id="@+id/thirdLevelFragment"

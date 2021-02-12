@@ -10,4 +10,5 @@
     <string name="input_answer">Ввести відповідь</string>
     <string name="first_level_question">Допоможи БетБухгалтеру скласти баланс.\nСкільки БетБухгалтер має активів?</string>
     <string name="second_level_question">Допоможи БетБухгалтеру скласти баланс.\nСкільки БетБухгалтер має пасивів?</string>
+    <string name="unexpected_error">Unexpected error</string>
 </resources>

@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    tools:context="fragment.FirstLevelFragment">
+    tools:context="fragment.ImageQuestionLevelFragment">
 
     <TextView
         android:id="@+id/questionTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="@string/first_level_question"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,18 +34,17 @@
         app:layout_constraintWidth_percent="0.9" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/answerInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/input_answer"
         android:importantForAutofill="no"
         android:inputType="number"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/answerBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionImg"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintTop_toBottomOf="@+id/questionImg" />
 
     <Button
         android:id="@+id/answerBtn"
@@ -59,7 +59,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/questionImg"
+        app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

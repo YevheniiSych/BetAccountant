@@ -15,7 +15,9 @@ import kotlinx.android.synthetic.main.fragment_image_question_level.*
 
 class ImageQuestionLevelFragment : Fragment() {
 
-    private val LEVEL_ANSWER = "22"
+    companion object {
+        private const val LEVEL_ANSWER = "22"
+    }
 
     private var currentLevel: Level? = null
 

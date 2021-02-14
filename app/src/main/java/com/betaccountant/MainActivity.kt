@@ -1,16 +1,19 @@
 package com.betaccountant
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.story_dialog_layout.view.*
 
 class MainActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val FRAGMENT_LEVEL = "FRAGMENT_LEVEL"
     }
 

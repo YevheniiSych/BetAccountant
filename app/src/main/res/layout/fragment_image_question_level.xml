@@ -12,13 +12,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/first_level_question"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        app:layout_constraintWidth_percent="0.9"
-        android:textSize="20sp"/>
+        app:layout_constraintWidth_percent="0.9" />
 
     <ImageView
         android:id="@+id/questionImg"
@@ -48,14 +48,9 @@
 
     <Button
         android:id="@+id/answerBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/baseButtonStyle"
         android:background="@drawable/answer_button_background"
-        android:gravity="center"
         android:text="@string/answer"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

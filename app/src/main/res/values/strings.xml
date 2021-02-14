@@ -15,4 +15,6 @@
     <string name="sea">Море</string>
     <string name="bank">Банк</string>
     <string name="business_meeting">Ділова зустріч</string>
+    <string name="second_to_third_level_story">Активи=Пасиви\n\nВітаємо! Ти правильно склав баланс!\nТепер допоможи БетБухгалтеру знайти директора і підписати баланс!\n\nВгадай, де знаходиться директор?</string>
+    <string name="сontinue">Продовжити</string>
 </resources>

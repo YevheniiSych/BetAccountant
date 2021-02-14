@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.MainActivity.Companion.FRAGMENT_LEVEL
 import com.betaccountant.R
+import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_image_question_level.*
@@ -38,17 +39,37 @@ class ImageQuestionLevelFragment : Fragment() {
         when (currentLevel) {
             Level.FIRST -> setFirstFragment()
             Level.SECOND -> setSecondFragment()
-            else -> Toast.makeText(context, getString(R.string.unexpected_error), Toast.LENGTH_LONG).show()
+            else -> Toast.makeText(context, getString(R.string.unexpected_error), Toast.LENGTH_LONG)
+                .show()
         }
         answerBtn.setOnClickListener {
-            if(answerInput.text.toString() == LEVEL_ANSWER && currentLevel != null) {
-                val nextLevel = Level.values()[currentLevel!!.value]
-                (activity as MainActivity).navigateToLevel(nextLevel)
+            if (answerInput.text.toString() == LEVEL_ANSWER && currentLevel != null) {
+                val nextLevel =
+                    Level.values()[currentLevel!!.value] // current value because indices starts from 0
+                when (currentLevel) {
+                    Level.FIRST -> {
+                        (activity as MainActivity).navigateToLevel(nextLevel)
+                    }
+                    Level.SECOND -> {
+                        StoryDialog.getInstance(
+                            requireContext(),
+                            getString(R.string.second_to_third_level_story)
+                        ) {
+                            (activity as MainActivity).navigateToLevel(nextLevel)
+                        }.show()
+                    }
+                    else -> Toast.makeText(
+                        context,
+                        getString(R.string.unexpected_error),
+                        Toast.LENGTH_LONG
+                    )
+                        .show()
+                }
             }
         }
     }
 
-    private fun setFirstFragment(){
+    private fun setFirstFragment() {
         activity?.toolbar?.timeCounterEnabled(true)
         activity?.toolbar?.resetTimeCounter()
         activity?.toolbar?.startTimeCounter()
@@ -56,7 +77,7 @@ class ImageQuestionLevelFragment : Fragment() {
         questionImg.setImageResource(R.drawable.first_level_task)
     }
 
-    private fun setSecondFragment(){
+    private fun setSecondFragment() {
         questionTxt.text = getText(R.string.second_level_question)
         questionImg.setImageResource(R.drawable.second_level_task)
     }

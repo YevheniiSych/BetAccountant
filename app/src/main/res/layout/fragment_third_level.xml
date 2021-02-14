@@ -5,10 +5,68 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ThirdLevel">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        tools:ignore="UselessParent">
 
+        <LinearLayout
+            android:id="@+id/bathContainer"
+            style="@style/thirdLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdLevelItemImageStyle"
+                android:src="@drawable/bath" />
+
+            <TextView
+                style="@style/thirdLevelItemTextStyle"
+                android:text="@string/bath" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/seaContainer"
+            style="@style/thirdLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdLevelItemImageStyle"
+                android:src="@drawable/sea" />
+
+            <TextView
+                style="@style/thirdLevelItemTextStyle"
+                android:text="@string/sea" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bankContainer"
+            style="@style/thirdLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdLevelItemImageStyle"
+                android:src="@drawable/bank" />
+
+            <TextView
+                style="@style/thirdLevelItemTextStyle"
+                android:text="@string/bank" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/businessMeetingContainer"
+            style="@style/thirdLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdLevelItemImageStyle"
+                android:src="@drawable/business_meeting" />
+
+            <TextView
+                style="@style/thirdLevelItemTextStyle"
+                android:text="@string/business_meeting" />
+
+        </LinearLayout>
+
+    </GridLayout>
 </FrameLayout>

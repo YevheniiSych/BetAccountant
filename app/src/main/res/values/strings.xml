@@ -8,7 +8,11 @@
     <string name="completed_levels">Рівень %d/8</string>
     <string name="answer">Відповісти</string>
     <string name="input_answer">Ввести відповідь</string>
-    <string name="first_level_question">Допоможи БетБухгалтеру скласти баланс.\nСкільки БетБухгалтер має активів?</string>
-    <string name="second_level_question">Допоможи БетБухгалтеру скласти баланс.\nСкільки БетБухгалтер має пасивів?</string>
+    <string name="first_level_question">Допоможи БетБухгалтеру скласти баланс. Скільки БетБухгалтер має активів?</string>
+    <string name="second_level_question">Допоможи БетБухгалтеру скласти баланс. Скільки БетБухгалтер має пасивів?</string>
     <string name="unexpected_error">Unexpected error</string>
+    <string name="bath">Баня</string>
+    <string name="sea">Море</string>
+    <string name="bank">Банк</string>
+    <string name="business_meeting">Ділова зустріч</string>
 </resources>

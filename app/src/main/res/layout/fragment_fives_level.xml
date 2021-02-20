@@ -3,12 +3,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FivesLevel">
+    tools:context=".fragment.ThirdLevel">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        tools:ignore="UselessParent">
 
+        <LinearLayout
+            android:id="@+id/libraryContainer"
+            style="@style/thirdFifthLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdFifthLevelItemImageStyle"
+                android:src="@drawable/library" />
+
+            <TextView
+                style="@style/thirdFifthLevelItemTextStyle"
+                android:text="@string/library" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bankContainer"
+            style="@style/thirdFifthLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdFifthLevelItemImageStyle"
+                android:src="@drawable/bank" />
+
+            <TextView
+                style="@style/thirdFifthLevelItemTextStyle"
+                android:text="@string/bank" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/taxContainer"
+            style="@style/thirdFifthLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdFifthLevelItemImageStyle"
+                android:src="@drawable/tax" />
+
+            <TextView
+                style="@style/thirdFifthLevelItemTextStyle"
+                android:text="@string/tax" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shopContainer"
+            style="@style/thirdFifthLevelItemsStyle">
+
+            <ImageView
+                style="@style/thirdFifthLevelItemImageStyle"
+                android:src="@drawable/shop" />
+
+            <TextView
+                style="@style/thirdFifthLevelItemTextStyle"
+                android:text="@string/shop" />
+
+        </LinearLayout>
+
+    </GridLayout>
 </FrameLayout>

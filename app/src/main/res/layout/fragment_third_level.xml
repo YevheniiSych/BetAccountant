@@ -14,56 +14,56 @@
 
         <LinearLayout
             android:id="@+id/bathContainer"
-            style="@style/thirdLevelItemsStyle">
+            style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView
-                style="@style/thirdLevelItemImageStyle"
+                style="@style/thirdFifthLevelItemImageStyle"
                 android:src="@drawable/bath" />
 
             <TextView
-                style="@style/thirdLevelItemTextStyle"
+                style="@style/thirdFifthLevelItemTextStyle"
                 android:text="@string/bath" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/seaContainer"
-            style="@style/thirdLevelItemsStyle">
+            style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView
-                style="@style/thirdLevelItemImageStyle"
+                style="@style/thirdFifthLevelItemImageStyle"
                 android:src="@drawable/sea" />
 
             <TextView
-                style="@style/thirdLevelItemTextStyle"
+                style="@style/thirdFifthLevelItemTextStyle"
                 android:text="@string/sea" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/bankContainer"
-            style="@style/thirdLevelItemsStyle">
+            style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView
-                style="@style/thirdLevelItemImageStyle"
+                style="@style/thirdFifthLevelItemImageStyle"
                 android:src="@drawable/bank" />
 
             <TextView
-                style="@style/thirdLevelItemTextStyle"
+                style="@style/thirdFifthLevelItemTextStyle"
                 android:text="@string/bank" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/businessMeetingContainer"
-            style="@style/thirdLevelItemsStyle">
+            style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView
-                style="@style/thirdLevelItemImageStyle"
+                style="@style/thirdFifthLevelItemImageStyle"
                 android:src="@drawable/business_meeting" />
 
             <TextView
-                style="@style/thirdLevelItemTextStyle"
+                style="@style/thirdFifthLevelItemTextStyle"
                 android:text="@string/business_meeting" />
 
         </LinearLayout>

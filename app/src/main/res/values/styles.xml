@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="thirdLevelItemsStyle">
+    <style name="thirdFifthLevelItemsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
@@ -9,12 +9,12 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="thirdLevelItemImageStyle">
+    <style name="thirdFifthLevelItemImageStyle">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">150dp</item>
     </style>
 
-    <style name="thirdLevelItemTextStyle">
+    <style name="thirdFifthLevelItemTextStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">10dp</item>

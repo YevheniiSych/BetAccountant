@@ -17,4 +17,5 @@
     <string name="business_meeting">Ділова зустріч</string>
     <string name="second_to_third_level_story">Активи=Пасиви\n\nВітаємо! Ти правильно склав баланс!\nТепер допоможи БетБухгалтеру знайти директора і підписати баланс!\n\nВгадай, де знаходиться директор?</string>
     <string name="сontinue">Продовжити</string>
+    <string name="fourth_level_question">Тепер Баланс заповнений і підписаний! Його потрібно залишити в сейфі.\n\nПідбери код до сейфу.</string>
 </resources>

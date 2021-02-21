@@ -6,13 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.betaccountant.MainActivity
 import com.betaccountant.R
 import com.betaccountant.dialog.BoolQuestionDialog
+import com.betaccountant.dialog.StoryDialog
+import com.betaccountant.enums.Level
+import com.betaccountant.enums.Locations
 import kotlinx.android.synthetic.main.fragment_third_level.*
 
 class ThirdLevel : Fragment() {
 
-    lateinit var questionsWithAnswers: MutableMap<String, String>
+    private lateinit var questionsWithAnswers: MutableMap<String, String>
+    private var directorLocation: Locations? = null
+    private var isDirectorLocation: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,13 +32,26 @@ class ThirdLevel : Fragment() {
     }
 
     private fun init() {
+        directorLocation = Locations.getRandomLocation(Level.THIRD)
         val questions = resources.getStringArray(R.array.third_level_questions)
         val answers = resources.getStringArray(R.array.third_level_answers)
         questionsWithAnswers = questions.zip(answers).toMap().toMutableMap()
-        bathContainer.setOnClickListener(this::handleItemClick)
-        seaContainer.setOnClickListener(this::handleItemClick)
-        bankContainer.setOnClickListener(this::handleItemClick)
-        businessMeetingContainer.setOnClickListener(this::handleItemClick)
+        bathContainer.setOnClickListener {
+            isDirectorLocation = directorLocation == Locations.BATH
+            handleItemClick(it)
+        }
+        seaContainer.setOnClickListener {
+            isDirectorLocation = directorLocation == Locations.SEA
+            handleItemClick(it)
+        }
+        bankContainer.setOnClickListener {
+            isDirectorLocation = directorLocation == Locations.BANK
+            handleItemClick(it)
+        }
+        businessMeetingContainer.setOnClickListener {
+            isDirectorLocation = directorLocation == Locations.BUSINESS_MEETING
+            handleItemClick(it)
+        }
     }
 
     private fun handleItemClick(view: View?) {
@@ -43,16 +62,30 @@ class ThirdLevel : Fragment() {
             requireContext(),
             question,
             answer
-        ) { isRightAnswer ->
-            if(isRightAnswer) {
-                Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(context, "not right", Toast.LENGTH_LONG).show()
-            }
+        ) {
+            handleAnswer(it)
             view?.visibility = View.INVISIBLE
         }.show()
     }
 
-    private fun getBoolAnswerByQuestion(question: String): Boolean = questionsWithAnswers[question] == getString(R.string.yes)
+    private fun handleAnswer(isRightAnswer: Boolean) {
+        if (isRightAnswer) {
+//            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
+        } else {
+//            Toast.makeText(context, "not right", Toast.LENGTH_LONG).show()
+        }
+        showDirectorDialog()
+    }
 
+    private fun showDirectorDialog() {
+        StoryDialog.getInstance(
+            requireContext(),
+            getString(if (isDirectorLocation) R.string.director_found else R.string.director_not_found)
+        ) {
+//            (activity as MainActivity).navigateToLevel(Level.FOURTH)
+        }.show()
+    }
+
+    private fun getBoolAnswerByQuestion(question: String): Boolean =
+        questionsWithAnswers[question] == getString(R.string.yes)
 }

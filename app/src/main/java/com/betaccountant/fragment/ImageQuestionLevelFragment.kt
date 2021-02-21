@@ -70,9 +70,6 @@ class ImageQuestionLevelFragment : Fragment() {
     }
 
     private fun setFirstFragment() {
-        activity?.toolbar?.timeCounterEnabled(true)
-        activity?.toolbar?.resetTimeCounter()
-        activity?.toolbar?.startTimeCounter()
         questionTxt.text = getText(R.string.first_level_question)
         questionImg.setImageResource(R.drawable.first_level_task)
     }

@@ -24,6 +24,6 @@ enum class Locations(val value: Int) {
             }
         }
 
-        fun getByValue(value: Int): Locations? = values().firstOrNull { it.value == value }
+        private fun getByValue(value: Int): Locations? = values().firstOrNull { it.value == value }
     }
 }

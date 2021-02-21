@@ -28,9 +28,9 @@
         <item>Усі держави, що входять до Європейського Союзу, зобов’язані використовувати євро в якості національної валюти?</item>
     </string-array>
     <string-array name="third_level_answers">
-        <item>yes</item>
-        <item>no</item>
-        <item>yes</item>
-        <item>no</item>
+        <item>так</item>
+        <item>ні</item>
+        <item>так</item>
+        <item>ні</item>
     </string-array>
 </resources>

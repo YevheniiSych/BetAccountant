@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.betaccountant.R
 import com.betaccountant.dialog.BoolQuestionDialog
@@ -42,7 +43,12 @@ class ThirdLevel : Fragment() {
             requireContext(),
             question,
             answer
-        ) {
+        ) { isRightAnswer ->
+            if(isRightAnswer) {
+                Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(context, "not right", Toast.LENGTH_LONG).show()
+            }
             view?.visibility = View.INVISIBLE
         }.show()
     }

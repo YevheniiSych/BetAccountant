@@ -3,5 +3,10 @@
     <declare-styleable name="ToolbarView">
         <attr name="label" format="string"/>
         <attr name="time_counter_enabled" format="boolean"/>
+        <attr name="lives_counter_enabled" format="boolean"/>
+        <attr name="max_lives_amount" format="integer"/>
+        <attr name="remaining_lives_amount" format="integer"/>
+        <attr name="remaining_life_img" format="reference"/>
+        <attr name="used_life_img" format="reference"/>
     </declare-styleable>
 </resources>

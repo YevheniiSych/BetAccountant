@@ -12,7 +12,11 @@
         android:layout_height="60dp"
         android:background="@color/purple_200"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        app:max_lives_amount="3"
+        app:remaining_lives_amount="3"
+        app:remaining_life_img="@drawable/ic_remaining_life_heart"
+        app:used_life_img="@drawable/ic_used_life_heart"/>
 
     <fragment
         android:id="@+id/fragment_container"

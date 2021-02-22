@@ -24,6 +24,7 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         startBtn.setOnClickListener {
             activity?.toolbar?.timeCounterEnabled(true)
+            activity?.toolbar?.livesCounterEnabled(true)
             activity?.toolbar?.resetTimeCounter()
             activity?.toolbar?.startTimeCounter()
             (activity as MainActivity).navigateToLevel(Level.FIRST)

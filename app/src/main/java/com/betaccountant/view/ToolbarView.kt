@@ -120,7 +120,7 @@ class ToolbarView @JvmOverloads constructor(
     private fun createLifeView(lifeImage: Drawable?): ImageView {
         val lifeView = ImageView(context)
         val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1F)
-        params.marginStart = 10
+        params.marginStart = context.resources.getDimensionPixelSize(R.dimen.toolbar_life_views_margin)
         lifeView.layoutParams = params
         lifeView.setImageDrawable(lifeImage)
         return lifeView

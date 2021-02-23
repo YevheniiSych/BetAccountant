@@ -10,8 +10,8 @@
     </style>
 
     <style name="thirdFifthLevelItemImageStyle">
-        <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_width">@dimen/third_level_image_size</item>
+        <item name="android:layout_height">@dimen/third_level_image_size</item>
     </style>
 
     <style name="thirdFifthLevelItemTextStyle">
@@ -20,6 +20,7 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sp_14</item>
     </style>
 
     <style name="baseButtonStyle">

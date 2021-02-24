@@ -75,10 +75,11 @@ class ToolbarView @JvmOverloads constructor(
         return remainingLivesAmount
     }
 
-    fun setRemainingLivesAmount(remainingLivesAmount: Int) {
+    fun setRemainingLivesAmount(remainingLivesAmount: Int?) {
+        this.remainingLivesAmount = remainingLivesAmount
         toolbarLivesCounter.removeAllViewsInLayout()
         for (i in 1..maxLivesAmount!!) {
-            if (i <= remainingLivesAmount) {
+            if (i <= remainingLivesAmount!!) {
                 toolbarLivesCounter.addView(createLifeView(remainingLifeImg))
             } else {
                 toolbarLivesCounter.addView(createLifeView(usedLifeImg))

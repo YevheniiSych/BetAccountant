@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/one_wrong_statement_task_text"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+    <RadioGroup
+        android:id="@+id/oneWrongStatementTaskRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/oneWrongStatementTaskFirstFact"
+            style="@style/OneWrongStatementTaskFactRadioButtonStyle"/>
+
+        <RadioButton
+            android:id="@+id/oneWrongStatementTaskSecondFact"
+            style="@style/OneWrongStatementTaskFactRadioButtonStyle"/>
+
+        <RadioButton
+            android:id="@+id/oneWrongStatementTaskThirdFact"
+            style="@style/OneWrongStatementTaskFactRadioButtonStyle" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/answerBtn"
+        style="@style/baseButtonStyle"
+        android:background="@drawable/answer_button_background"
+        android:text="@string/answer"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>

@@ -31,9 +31,9 @@
 
     <fragment
         android:id="@+id/fivesLevelFragment"
-        android:name="com.betaccountant.fragment.FivesLevel"
+        android:name="com.betaccountant.fragment.FifthLevel"
         android:label="fragment_fives_level"
-        tools:layout="@layout/fragment_fives_level" />
+        tools:layout="@layout/fragment_fifth_level" />
 
     <fragment
         android:id="@+id/sixthLevelFragment"

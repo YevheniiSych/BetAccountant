@@ -1,15 +1,12 @@
 package com.betaccountant
 
 import android.app.AlertDialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.story_dialog_layout.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
             Level.THIRD -> navController?.navigate(R.id.thirdLevelFragment)
             Level.FOURTH -> navController?.navigate(R.id.fourthLevelFragment)
-            Level.FIVES -> navController?.navigate(R.id.fivesLevelFragment)
+            Level.FIFTH -> navController?.navigate(R.id.fivesLevelFragment)
             Level.SIXTH -> navController?.navigate(R.id.sixthLevelFragment)
             Level.SEVENTH -> navController?.navigate(R.id.seventhLevelFragment)
             Level.EIGHTH -> navController?.navigate(R.id.eighthLevelFragment)

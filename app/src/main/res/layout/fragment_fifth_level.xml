@@ -27,7 +27,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bankContainer"
+            android:id="@+id/bankBalanceContainer"
             style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView

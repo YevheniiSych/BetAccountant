@@ -67,22 +67,18 @@ class ToolbarView @JvmOverloads constructor(
         livesCounter?.visibility = if (enabled) View.VISIBLE else View.GONE
     }
 
-    fun getMaxLivesAmount(): Int? {
-        return maxLivesAmount
+    fun getMaxLivesAmount(): Int {
+        return maxLivesAmount!!
     }
 
-    fun getRemainingLivesAmount(): Int? {
-        return remainingLivesAmount
+    fun getRemainingLivesAmount(): Int {
+        return remainingLivesAmount!!
     }
 
-    fun setRemainingLivesAmount(remainingLivesAmount: Int) {
+    fun setRemainingLivesAmount(remainingLivesAmount: Int?) {
         toolbarLivesCounter.removeAllViewsInLayout()
         for (i in 1..maxLivesAmount!!) {
-            if (i <= remainingLivesAmount) {
-                toolbarLivesCounter.addView(createLifeView(remainingLifeImg))
-            } else {
-                toolbarLivesCounter.addView(createLifeView(usedLifeImg))
-            }
+            toolbarLivesCounter.addView(createLifeView(if(i <= remainingLivesAmount!!) remainingLifeImg else usedLifeImg))
         }
     }
 

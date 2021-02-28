@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    tools:context="fragment.ImageQuestionLevelFragment">
+    tools:context="fragment.ImageQuestionLevelFragment"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/questionTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/first_level_question"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:layout_constraintWidth_percent="0.9" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/questionImg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questionTxt"
-        app:layout_constraintVertical_bias="0.109"
-        app:layout_constraintWidth_percent="0.9" />
+        <TextView
+            android:id="@+id/questionTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/first_level_question"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023"
+            app:layout_constraintWidth_percent="0.9" />
 
-    <EditText
-        android:id="@+id/answerInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/input_answer"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/answerBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionImg" />
+        <ImageView
+            android:id="@+id/questionImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionTxt"
+            app:layout_constraintVertical_bias="0.109"
+            app:layout_constraintWidth_percent="0.9" />
 
-    <Button
-        android:id="@+id/answerBtn"
-        style="@style/baseButtonStyle"
-        android:background="@drawable/answer_button_background"
-        android:text="@string/answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionImg"
-        app:layout_constraintVertical_bias="0.6" />
+        <EditText
+            android:id="@+id/answerInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_answer"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toTopOf="@+id/answerBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionImg" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/answerBtn"
+            style="@style/baseButtonStyle"
+            android:background="@drawable/answer_button_background"
+            android:text="@string/answer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionImg"
+            app:layout_constraintVertical_bias="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

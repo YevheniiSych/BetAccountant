@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/purple_200"
     android:orientation="horizontal"
-    android:paddingHorizontal="20dp">
+    android:paddingHorizontal="@dimen/toolbar_horizontal_padding"
+    android:paddingVertical="@dimen/toolbar_vertical_padding">
 
     <TextView
         android:id="@+id/toolbarLabel"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:textColor="@color/white"
-        android:textSize="26sp"
+        android:textSize="@dimen/toolbar_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,7 @@
     <LinearLayout
         android:id="@+id/toolbarLivesCounter"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:paddingStart="10dp"
         android:paddingEnd="15dp"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:textColor="@color/white"
-        android:textSize="26sp"
+        android:textSize="@dimen/toolbar_text_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

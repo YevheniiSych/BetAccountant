@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_vertical_padding">15dp</dimen>
+    <dimen name="toolbar_horizontal_padding">20dp</dimen>
+    <dimen name="toolbar_text_size">26sp</dimen>
+    <dimen name="toolbar_life_views_margin">5dp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="third_level_image_size">130dp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+</resources>

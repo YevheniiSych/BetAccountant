@@ -50,9 +50,11 @@ class OneWrongStatementTaskDialog(
     }
 
     private fun handleClick(view: View?) {
-        val radioButton: RadioButton = findViewById(oneWrongStatementTaskRadioGroup.checkedRadioButtonId)
-        val answerFactNumber = oneWrongStatementTaskRadioGroup.indexOfChild(radioButton).inc()
-        answerListener(answerFactNumber == answer)
-        this@OneWrongStatementTaskDialog.dismiss()
+        val radioButton: RadioButton? = findViewById(oneWrongStatementTaskRadioGroup.checkedRadioButtonId)
+        if(radioButton != null) {
+            val answerFactNumber = oneWrongStatementTaskRadioGroup.indexOfChild(oneWrongStatementTaskRadioGroup).inc()
+            answerListener(answerFactNumber == answer)
+            this@OneWrongStatementTaskDialog.dismiss()
+        }
     }
 }

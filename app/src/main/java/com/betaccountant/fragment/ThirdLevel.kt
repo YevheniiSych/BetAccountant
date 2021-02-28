@@ -11,6 +11,7 @@ import com.betaccountant.dialog.BoolQuestionDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.enums.Locations
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_third_level.*
 
 class ThirdLevel : Fragment() {
@@ -71,7 +72,7 @@ class ThirdLevel : Fragment() {
         if (isRightAnswer) {
 //            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
         } else {
-//            Toast.makeText(context, "not right", Toast.LENGTH_LONG).show()
+            activity?.toolbar?.setRemainingLivesAmount(activity?.toolbar?.getRemainingLivesAmount()?.minus(1))
         }
         showDirectorDialog()
     }

@@ -75,7 +75,11 @@ class ToolbarView @JvmOverloads constructor(
         return remainingLivesAmount!!
     }
 
-    fun setRemainingLivesAmount(remainingLivesAmount: Int?) {
+    fun subtractOneLife(){
+        setRemainingLivesAmount(getRemainingLivesAmount().dec())
+    }
+
+    private fun setRemainingLivesAmount(remainingLivesAmount: Int?) {
         this.remainingLivesAmount = remainingLivesAmount
         toolbarLivesCounter.removeAllViewsInLayout()
         for (i in 1..maxLivesAmount!!) {

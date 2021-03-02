@@ -80,11 +80,7 @@ class FifthLevel : Fragment() {
         if (isRightAnswer) {
 //            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
         } else {
-//            activity?.toolbar?.setRemainingLivesAmount(activity?.toolbar?.getRemainingLivesAmount()?.minus(1))
-            activity?.toolbar?.apply {
-                setRemainingLivesAmount(getRemainingLivesAmount()?.dec())
-            }
-//            TODO: minus life method
+            activity?.toolbar?.subtractOneLife()
         }
         showDirectorDialog()
     }

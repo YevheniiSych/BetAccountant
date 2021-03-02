@@ -122,5 +122,4 @@ class ToolbarView @JvmOverloads constructor(
         lifeView.setImageDrawable(lifeImage)
         return lifeView
     }
-
 }

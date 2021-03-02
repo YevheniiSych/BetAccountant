@@ -85,7 +85,7 @@ class FifthLevel : Fragment() {
             activity?.toolbar?.apply {
                 setRemainingLivesAmount(getRemainingLivesAmount()?.dec())
             }
-//            minus life method
+//            TODO: minus life method
         }
         showDirectorDialog()
     }

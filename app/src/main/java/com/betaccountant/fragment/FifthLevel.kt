@@ -7,15 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.betaccountant.MainActivity
 import com.betaccountant.R
-import com.betaccountant.dialog.BoolQuestionDialog
 import com.betaccountant.dialog.OneWrongStatementTaskDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.enums.Locations
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_fifth_level.*
-import kotlinx.android.synthetic.main.fragment_third_level.*
-import kotlinx.android.synthetic.main.fragment_third_level.bankContainer
 
 class FifthLevel : Fragment() {
 
@@ -35,31 +32,21 @@ class FifthLevel : Fragment() {
     }
 
     private fun init() {
-        balanceLocation = Locations.getRandomLocation(Level.FIFTH)
+        balanceLocation = Locations.TAX_OFFICE
         val factLists = ArrayList<List<String>>()
-//        factLists[0] = ArrayList(3)
         factLists.add(resources.getStringArray(R.array.fifth_level_first_facts_list).toList())
         factLists.add(resources.getStringArray(R.array.fifth_level_second_facts_list).toList())
         factLists.add(resources.getStringArray(R.array.fifth_level_third_facts_list).toList())
         factLists.add(resources.getStringArray(R.array.fifth_level_fourth_facts_list).toList())
         val answers = resources.getStringArray(R.array.fifth_level_answers).toList()
         factsWithAnswers = factLists.zip(answers).toMap().toMutableMap()
-        libraryContainer.setOnClickListener {
-            isBalanceLocation = balanceLocation == Locations.LIBRARY
-            handleItemClick(it)
-        }
-        bankBalanceContainer.setOnClickListener {
-            isBalanceLocation = balanceLocation == Locations.BANK_BALANCE
-            handleItemClick(it)
-        }
+        libraryContainer.setOnClickListener(this::handleItemClick)
+        bankBalanceContainer.setOnClickListener(this::handleItemClick)
         taxContainer.setOnClickListener {
             isBalanceLocation = balanceLocation == Locations.TAX_OFFICE
             handleItemClick(it)
         }
-        shopContainer.setOnClickListener {
-            isBalanceLocation = balanceLocation == Locations.SHOP
-            handleItemClick(it)
-        }
+        shopContainer.setOnClickListener(this::handleItemClick)
     }
 
     private fun handleItemClick(view: View?) {
@@ -82,13 +69,13 @@ class FifthLevel : Fragment() {
         } else {
             activity?.toolbar?.subtractOneLife()
         }
-        showDirectorDialog()
+        showTaxOfficeDialog()
     }
 
-    private fun showDirectorDialog() {
+    private fun showTaxOfficeDialog() {
         StoryDialog.getInstance(
             requireContext(),
-            getString(if (isBalanceLocation) R.string.director_found else R.string.director_not_found)
+            getString(if (isBalanceLocation) R.string.help_betaccountant_reach_tax_office else R.string.balance_not_submitted)
         ) {
             if (isBalanceLocation) {
                 (activity as MainActivity).navigateToLevel(Level.SIXTH)

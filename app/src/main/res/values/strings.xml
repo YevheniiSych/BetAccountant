@@ -25,6 +25,8 @@
     <string name="director_found">Вітаємо! Ти знайшов директора.</string>
     <string name="director_not_found">На жаль, ти не знайшов директора. Cпробуй в іншому місці</string>
     <string name="one_wrong_statement_task_text">Серед цих фактів два є правдивими, а третій – ні. Виберіть твердження, яке є неправдою :</string>
+    <string name="help_betaccountant_reach_tax_office">Допоможи БетБухгалтеру швидше дістатись до податкової !</string>
+    <string name="balance_not_submitted">На жаль, баланс не здано :(\nСпобуй ще раз</string>
 
     <string-array name="third_level_questions">
         <item>Третина населення землі живе менш ніж на 2 долари в день?</item>

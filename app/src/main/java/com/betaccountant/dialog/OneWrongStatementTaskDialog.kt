@@ -42,9 +42,7 @@ class OneWrongStatementTaskDialog(
         super.onCreate(savedInstanceState)
         val dialogView = layoutInflater.inflate(R.layout.one_wrong_statement_task_dialog_layout, null)
         dialogView.apply {
-            for (fact in facts) {
-                oneWrongStatementTaskRadioGroup.addView(createRadioButtonView(fact))
-            }
+            facts.forEach { oneWrongStatementTaskRadioGroup.addView(createRadioButtonView(it)) }
             answerBtn.setOnClickListener(this@OneWrongStatementTaskDialog::handleClick)
         }
         setContentView(dialogView)
@@ -69,13 +67,14 @@ class OneWrongStatementTaskDialog(
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
         params.topMargin = 20
-        radioButton.layoutParams = params
-        radioButton.text = factText
-        radioButton.background =
-            ContextCompat.getDrawable(context, R.drawable.transparent_background_with_border)
-        radioButton.buttonTintList = ContextCompat.getColorStateList(context, R.color.border_grey)
-        radioButton.minHeight = 150
-        return radioButton
+        return radioButton.apply {
+            layoutParams = params
+            text = factText
+            background =
+                ContextCompat.getDrawable(context, R.drawable.transparent_background_with_border)
+            buttonTintList = ContextCompat.getColorStateList(context, R.color.border_grey)
+            minHeight = 150
+        }
     }
 
 }

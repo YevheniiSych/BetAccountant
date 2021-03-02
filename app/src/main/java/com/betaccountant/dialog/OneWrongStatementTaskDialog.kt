@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.vie
 class OneWrongStatementTaskDialog(
     context: Context,
     private val facts: List<String>,
-    private val answer: Int,
+    private val answer: String,
     private val answerListener: (isRightAnswer: Boolean) -> Unit
 ) : Dialog(context) {
 
@@ -26,7 +26,7 @@ class OneWrongStatementTaskDialog(
         fun getInstance(
             context: Context,
             facts: List<String>,
-            answer: Int,
+            answer: String,
             answerListener: (isRightAnswer: Boolean) -> Unit
         ): OneWrongStatementTaskDialog {
             return if (instance == null) OneWrongStatementTaskDialog(
@@ -56,9 +56,8 @@ class OneWrongStatementTaskDialog(
         val radioButton: RadioButton? =
             findViewById(oneWrongStatementTaskRadioGroup.checkedRadioButtonId)
         if (radioButton != null) {
-            val answerFactNumber =
-                oneWrongStatementTaskRadioGroup.indexOfChild(oneWrongStatementTaskRadioGroup).inc()
-            answerListener(answerFactNumber == answer)
+            val answerFactNumber = oneWrongStatementTaskRadioGroup.indexOfChild(radioButton).inc()
+            answerListener(answerFactNumber == answer.toInt())
             this@OneWrongStatementTaskDialog.dismiss()
         }
     }

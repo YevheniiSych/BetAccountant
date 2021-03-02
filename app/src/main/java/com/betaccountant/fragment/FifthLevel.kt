@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_third_level.bankContainer
 
 class FifthLevel : Fragment() {
 
-    private lateinit var factsWithAnswers: MutableMap<List<String>, Int>
+    private lateinit var factsWithAnswers: MutableMap<List<String>, String>
     private var balanceLocation: Locations? = null
     private var isBalanceLocation: Boolean = false
 
@@ -42,7 +42,7 @@ class FifthLevel : Fragment() {
         factLists.add(resources.getStringArray(R.array.fifth_level_second_facts_list).toList())
         factLists.add(resources.getStringArray(R.array.fifth_level_third_facts_list).toList())
         factLists.add(resources.getStringArray(R.array.fifth_level_fourth_facts_list).toList())
-        val answers = resources.getIntArray(R.array.fifth_level_answers).toList()
+        val answers = resources.getStringArray(R.array.fifth_level_answers).toList()
         factsWithAnswers = factLists.zip(answers).toMap().toMutableMap()
         libraryContainer.setOnClickListener {
             isBalanceLocation = balanceLocation == Locations.LIBRARY
@@ -65,7 +65,6 @@ class FifthLevel : Fragment() {
     private fun handleItemClick(view: View?) {
         val factList = factsWithAnswers.keys.random()
         val answer = factsWithAnswers[factList]
-        //TODO: fix bug that dialog does not get correct answer.
         factsWithAnswers.remove(factList)
         OneWrongStatementTaskDialog.getInstance(
             requireContext(),

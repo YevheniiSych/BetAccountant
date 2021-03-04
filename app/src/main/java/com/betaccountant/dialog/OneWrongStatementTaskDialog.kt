@@ -11,28 +11,26 @@ import android.widget.LinearLayout
 import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import com.betaccountant.R
+import com.betaccountant.model.FifthLevelTaskFact
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.*
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.view.*
 
 class OneWrongStatementTaskDialog(
     context: Context,
-    private val facts: List<String>,
-    private val answer: String,
-    private val answerListener: (isRightAnswer: Boolean) -> Unit
+    private val facts: List<FifthLevelTaskFact>,
+    private val answerListener: (isRightAnshowTaxOfficeDialogswer: Boolean) -> Unit
 ) : Dialog(context) {
 
     companion object {
         private var instance: OneWrongStatementTaskDialog? = null
         fun getInstance(
             context: Context,
-            facts: List<String>,
-            answer: String,
+            facts: List<FifthLevelTaskFact>,
             answerListener: (isRightAnswer: Boolean) -> Unit
         ): OneWrongStatementTaskDialog {
             return if (instance == null) OneWrongStatementTaskDialog(
                 context,
                 facts,
-                answer,
                 answerListener
             ) else instance!!
         }
@@ -54,13 +52,13 @@ class OneWrongStatementTaskDialog(
         val radioButton: RadioButton? =
             findViewById(oneWrongStatementTaskRadioGroup.checkedRadioButtonId)
         if (radioButton != null) {
-            val answerFactNumber = oneWrongStatementTaskRadioGroup.indexOfChild(radioButton).inc()
-            answerListener(answerFactNumber == answer.toInt())
+            val answerFactNumber = oneWrongStatementTaskRadioGroup.indexOfChild(radioButton)
+            answerListener(!facts[answerFactNumber].isTrue)
             this@OneWrongStatementTaskDialog.dismiss()
         }
     }
 
-    private fun createRadioButtonView(factText: String): RadioButton {
+    private fun createRadioButtonView(fact: FifthLevelTaskFact): RadioButton {
         val radioButton = RadioButton(context)
         val params = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -69,7 +67,7 @@ class OneWrongStatementTaskDialog(
         params.topMargin = 20
         return radioButton.apply {
             layoutParams = params
-            text = factText
+            text = fact.text
             background =
                 ContextCompat.getDrawable(context, R.drawable.transparent_background_with_border)
             buttonTintList = ContextCompat.getColorStateList(context, R.color.border_grey)

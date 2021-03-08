@@ -72,7 +72,7 @@ class ThirdLevel : Fragment() {
         if (isRightAnswer) {
 //            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
         } else {
-            activity?.toolbar?.setRemainingLivesAmount(activity?.toolbar?.getRemainingLivesAmount()?.minus(1))
+            activity?.toolbar?.subtractOneLife()
         }
         showDirectorDialog()
     }

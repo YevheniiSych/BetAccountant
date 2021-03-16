@@ -12,12 +12,11 @@ import kotlinx.android.synthetic.main.video_dialog_layout.*
 import kotlinx.android.synthetic.main.video_dialog_layout.view.*
 
 
-class PromoVideoDialog(context: Context) : Dialog(context) {
+class PromoVideoDialog(context: Context, private val promoVideoUrl: String?) : Dialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dialogView = layoutInflater.inflate(R.layout.video_dialog_layout, null)
-        val promoVideoUrl = "android.resource://" + context.packageName + "/" + R.raw.promo
         val uri = Uri.parse(promoVideoUrl)
         dialogView.videoView.setVideoURI(uri)
         setContentView(dialogView)
@@ -34,14 +33,11 @@ class PromoVideoDialog(context: Context) : Dialog(context) {
         }
     }
 
-    fun start(startTime: Int = 0) {
-        videoView.seekTo(startTime)
+    fun start(completeListener: () -> Unit) {
         videoView.start()
-    }
-
-    fun getCurrentVideoPosition() = videoView.currentPosition
-
-    fun pause() {
-        videoView.pause()
+        videoView.setOnCompletionListener {
+            completeListener.invoke()
+            this@PromoVideoDialog.dismiss()
+        }
     }
 }

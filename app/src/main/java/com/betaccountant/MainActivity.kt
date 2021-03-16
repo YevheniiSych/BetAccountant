@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun navigateToLevel(nextLevel: Level) {
+    internal fun navigateToLevel(nextLevel: Level) {
         when (nextLevel) {
             Level.FIRST, Level.SECOND -> {
                 val bundle = Bundle()
@@ -62,4 +63,24 @@ class MainActivity : AppCompatActivity() {
             show()
         }
     }
+
+    internal fun showPromoVideoAndNavigateToLevel(nextLevel: Level? = null) {
+        val promoVideoUrl = "android.resource://" + this.packageName + "/" +
+                when (nextLevel) {
+                    Level.THIRD -> R.raw.promo_part_1
+                    Level.FIFTH -> R.raw.promo_part_2
+                    Level.SEVENTH -> R.raw.promo_part_3
+                    else -> ""
+                }
+        val promoDialog = PromoVideoDialog(this, promoVideoUrl)
+        promoDialog.show()
+        toolbar?.pauseTimeCounter()
+        promoDialog.start {
+            toolbar?.resumeTimeCounter()
+            if (nextLevel != null) {
+                navigateToLevel(nextLevel)
+            }
+        }
+    }
+
 }

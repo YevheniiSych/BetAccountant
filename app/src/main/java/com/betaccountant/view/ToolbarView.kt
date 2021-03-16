@@ -26,6 +26,7 @@ class ToolbarView @JvmOverloads constructor(
     private var remainingLivesAmount: Int? = 0
     private var remainingLifeImg: Drawable? = null
     private var usedLifeImg: Drawable? = null
+    private var timeCounterStoppedTime: Long = 0
 
     init {
         val view = View.inflate(context, R.layout.layout_toolbar_view, this)
@@ -36,15 +37,22 @@ class ToolbarView @JvmOverloads constructor(
     }
 
     fun startTimeCounter() {
+        timeCounter?.base = SystemClock.elapsedRealtime() - timeCounterStoppedTime
         timeCounter?.start()
     }
 
-    fun pauseTimeCounter(){
+    fun pauseTimeCounter() {
+        timeCounterStoppedTime = SystemClock.elapsedRealtime() - (timeCounter?.base ?: 0)
         timeCounter?.stop()
     }
 
-    fun resetTimeCounter(){
+    fun resumeTimeCounter() {
+        startTimeCounter()
+    }
+
+    fun resetTimeCounter() {
         timeCounter?.base = SystemClock.elapsedRealtime()
+        timeCounterStoppedTime = 0
     }
 
     fun timeCounterEnabled(enabled: Boolean) {
@@ -75,7 +83,7 @@ class ToolbarView @JvmOverloads constructor(
         return remainingLivesAmount!!
     }
 
-    fun subtractOneLife(){
+    fun subtractOneLife() {
         setRemainingLivesAmount(getRemainingLivesAmount().dec())
     }
 
@@ -83,7 +91,7 @@ class ToolbarView @JvmOverloads constructor(
         this.remainingLivesAmount = remainingLivesAmount
         toolbarLivesCounter.removeAllViewsInLayout()
         for (i in 1..maxLivesAmount!!) {
-            toolbarLivesCounter.addView(createLifeView(if(i <= remainingLivesAmount!!) remainingLifeImg else usedLifeImg))
+            toolbarLivesCounter.addView(createLifeView(if (i <= remainingLivesAmount!!) remainingLifeImg else usedLifeImg))
         }
     }
 
@@ -121,7 +129,8 @@ class ToolbarView @JvmOverloads constructor(
     private fun createLifeView(lifeImage: Drawable?): ImageView {
         val lifeView = ImageView(context)
         val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1F)
-        params.marginStart = context.resources.getDimensionPixelSize(R.dimen.toolbar_life_views_margin)
+        params.marginStart =
+            context.resources.getDimensionPixelSize(R.dimen.toolbar_life_views_margin)
         lifeView.layoutParams = params
         lifeView.setImageDrawable(lifeImage)
         return lifeView

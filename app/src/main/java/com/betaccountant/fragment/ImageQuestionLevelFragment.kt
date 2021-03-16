@@ -9,19 +9,14 @@ import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.MainActivity.Companion.FRAGMENT_LEVEL
 import com.betaccountant.R
-import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.fragment_image_question_level.*
-import java.util.*
-import kotlin.concurrent.schedule
 
 class ImageQuestionLevelFragment : Fragment() {
 
     companion object {
-        private const val LEVEL_ANSWER = "22"
-        private const val SECONDS_49_IN_MILLIS = 49000L
-        public var STOP_VIDEO_POSITION = 8000
+        private const val FIRST_AND_SECOND_LEVEL_ANSWER = "22"
     }
 
     private var currentLevel: Level? = null
@@ -47,7 +42,7 @@ class ImageQuestionLevelFragment : Fragment() {
                 .show()
         }
         answerBtn.setOnClickListener {
-            if (answerInput.text.toString() == LEVEL_ANSWER && currentLevel != null) {
+            if (answerInput.text.toString() == FIRST_AND_SECOND_LEVEL_ANSWER && currentLevel != null) {
                 val nextLevel =
                     Level.values()[currentLevel!!.value] // current value because indices starts from 0
                 when (currentLevel) {
@@ -59,8 +54,7 @@ class ImageQuestionLevelFragment : Fragment() {
                             requireContext(),
                             getString(R.string.second_to_third_level_story)
                         ) {
-                            showPromoVideo()
-                            (activity as MainActivity).navigateToLevel(nextLevel)
+                            (activity as MainActivity).showPromoVideoAndNavigateToLevel(nextLevel)
                         }.show()
                     }
                     else -> Toast.makeText(
@@ -82,15 +76,5 @@ class ImageQuestionLevelFragment : Fragment() {
     private fun setSecondFragment() {
         questionTxt.text = getText(R.string.second_level_question)
         questionImg.setImageResource(R.drawable.second_level_task)
-    }
-
-    private fun showPromoVideo() {
-        val promoDialog = PromoVideoDialog(requireContext())
-        promoDialog.show()
-        promoDialog.start(STOP_VIDEO_POSITION)
-        Timer().schedule(SECONDS_49_IN_MILLIS) {
-            STOP_VIDEO_POSITION = promoDialog.getCurrentVideoPosition()
-            promoDialog.dismiss()
-        }
     }
 }

@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     Level.THIRD -> R.raw.promo_part_1
                     Level.FIFTH -> R.raw.promo_part_2
                     Level.SEVENTH -> R.raw.promo_part_3
-                    else -> ""
+                    else -> R.raw.promo_part_4
                 }
         val promoDialog = PromoVideoDialog(this, promoVideoUrl)
         promoDialog.show()

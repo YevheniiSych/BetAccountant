@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
+import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.model.Fact
@@ -44,7 +45,7 @@ class SixthLevel : Fragment() {
         } else {
             StoryDialog(
                 requireContext(), getString(R.string.go_to_tax), {
-                    (activity as MainActivity).navigateToLevel(Level.SEVENTH)
+                    (activity as MainActivity).showPromoVideoAndNavigateToLevel(Level.SEVENTH)
                 },
                 ContextCompat.getDrawable(
                     requireContext(),

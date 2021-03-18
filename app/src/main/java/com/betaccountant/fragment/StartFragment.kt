@@ -27,7 +27,7 @@ class StartFragment : Fragment() {
             activity?.toolbar?.livesCounterEnabled(true)
             activity?.toolbar?.resetTimeCounter()
             activity?.toolbar?.startTimeCounter()
-            (activity as MainActivity).navigateToLevel(Level.FOURTH)
+            (activity as MainActivity).navigateToLevel(Level.SIXTH)
         }
         activity?.toolbar?.setLabel(R.string.app_name)
     }

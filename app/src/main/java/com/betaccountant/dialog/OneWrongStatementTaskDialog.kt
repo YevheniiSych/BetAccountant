@@ -11,21 +11,21 @@ import android.widget.LinearLayout
 import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import com.betaccountant.R
-import com.betaccountant.model.FifthLevelTaskFact
+import com.betaccountant.model.Fact
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.*
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.view.*
 
 class OneWrongStatementTaskDialog(
     context: Context,
-    private val facts: List<FifthLevelTaskFact>,
-    private val answerListener: (isRightAnshowTaxOfficeDialogswer: Boolean) -> Unit
+    private val facts: List<Fact>,
+    private val answerListener: (isRightAnswer: Boolean) -> Unit
 ) : Dialog(context) {
 
     companion object {
         private var instance: OneWrongStatementTaskDialog? = null
         fun getInstance(
             context: Context,
-            facts: List<FifthLevelTaskFact>,
+            facts: List<Fact>,
             answerListener: (isRightAnswer: Boolean) -> Unit
         ): OneWrongStatementTaskDialog {
             return if (instance == null) OneWrongStatementTaskDialog(
@@ -58,7 +58,7 @@ class OneWrongStatementTaskDialog(
         }
     }
 
-    private fun createRadioButtonView(fact: FifthLevelTaskFact): RadioButton {
+    private fun createRadioButtonView(fact: Fact): RadioButton {
         val radioButton = RadioButton(context)
         val params = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,

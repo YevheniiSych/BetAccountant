@@ -1,7 +1,7 @@
 package com.betaccountant.model
 
-data class FifthLevelTaskFact(
+data class Fact(
     val text: String,
     val isTrue: Boolean,
-    val groupId: Int
+    val groupId: Int = 0
 )

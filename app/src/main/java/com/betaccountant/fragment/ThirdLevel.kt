@@ -78,14 +78,15 @@ class ThirdLevel : Fragment() {
     }
 
     private fun showDirectorDialog() {
-        StoryDialog.getInstance(
+        StoryDialog(
             requireContext(),
-            getString(if (isDirectorLocation) R.string.director_found else R.string.director_not_found)
-        ) {
-            if (isDirectorLocation) {
-                (activity as MainActivity).navigateToLevel(Level.FOURTH)
+            getString(if (isDirectorLocation) R.string.director_found else R.string.director_not_found),
+            {
+                if (isDirectorLocation) {
+                    (activity as MainActivity).navigateToLevel(Level.FOURTH)
+                }
             }
-        }.show()
+        ).show()
     }
 
     private fun getBoolAnswerByQuestion(question: String): Boolean =

@@ -11,13 +11,13 @@ import com.betaccountant.dialog.OneWrongStatementTaskDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.enums.Locations
-import com.betaccountant.model.FifthLevelTaskFact
+import com.betaccountant.model.Fact
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_fifth_level.*
 
 class FifthLevel : Fragment() {
 
-    private lateinit var allFactsList: ArrayList<FifthLevelTaskFact>
+    private lateinit var allFactsList: ArrayList<Fact>
     private var balanceLocation: Locations? = null
     private var isBalanceLocation: Boolean = false
 
@@ -47,7 +47,7 @@ class FifthLevel : Fragment() {
     private fun handleItemClick(view: View?) {
         val randomGroupId = allFactsList.random().groupId
         val oneTaskFactsList = allFactsList.filter { it.groupId == randomGroupId }
-        allFactsList = allFactsList.filterNot { it.groupId == randomGroupId } as ArrayList<FifthLevelTaskFact>
+        allFactsList = allFactsList.filterNot { it.groupId == randomGroupId } as ArrayList<Fact>
         OneWrongStatementTaskDialog.getInstance(
             requireContext(),
             oneTaskFactsList,
@@ -67,37 +67,38 @@ class FifthLevel : Fragment() {
     }
 
     private fun showBalanceDialog() {
-        StoryDialog.getInstance(
+        StoryDialog(
             requireContext(),
-            getString(if (isBalanceLocation) R.string.help_betaccountant_reach_tax_office else R.string.balance_not_submitted)
-        ) {
-            if (isBalanceLocation) {
-                (activity as MainActivity).navigateToLevel(Level.SIXTH)
+            getString(if (isBalanceLocation) R.string.help_betaccountant_reach_tax_office else R.string.balance_not_submitted),
+            {
+                if (isBalanceLocation) {
+                    (activity as MainActivity).navigateToLevel(Level.SIXTH)
+                }
             }
-        }.show()
+        ).show()
     }
 
-    private fun fillFactList(): ArrayList<FifthLevelTaskFact> {
-        val factList = ArrayList<FifthLevelTaskFact>()
+    private fun fillFactList(): ArrayList<Fact> {
+        val factList = ArrayList<Fact>()
 
         // Fact List 1
 
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "Вперше податок на доходи запровадила Велика Британія 1799 року.",
                 true,
                 1
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "У багатьох країнах зараз справляється податок на собак.",
                 true,
                 1
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "В Україні підприємства можуть не сплачувати податки у перші 5 років своєї діяльності.",
                 false,
                 1
@@ -107,21 +108,21 @@ class FifthLevel : Fragment() {
         // Fact List 2
 
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "У 1689 р. Петром І у Росії був запроваджений податок на бороду.",
                 true,
                 2
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "В Україні з 2000 р. діє податок на годинники.",
                 false,
                 2
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "Українець може зменшити суму сплачених податків, якщо оплачує своє навчання в закладах вищої освіти.",
                 true,
                 2
@@ -131,21 +132,21 @@ class FifthLevel : Fragment() {
         // Fact List 3
 
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "На Балеарських островах в Іспанії діє податок на сонце.",
                 true,
                 3
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "Середньостатистичний українець сплачує в якості податків більше 40% заробітної плати.",
                 false,
                 3
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "За часів Київської Русі податки можна було сплачувати як у грошовому, так і в натуральному вигляді (хутром, зерном тощо).",
                 true,
                 3
@@ -155,21 +156,21 @@ class FifthLevel : Fragment() {
         // Fact List 4
 
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "У 1783 р. у Великій Британії було запроваджено податок на капелюхи.",
                 true,
                 4
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "При заповненні податкової декларації в Україні людина обов’язково має вказати свій індивідуальний податковий номер.",
                 true,
                 4
             )
         )
         factList.add(
-            FifthLevelTaskFact(
+            Fact(
                 "У Німеччині кожен громадянин може безкоштовно звернутись до податкового консультанта.",
                 false,
                 4

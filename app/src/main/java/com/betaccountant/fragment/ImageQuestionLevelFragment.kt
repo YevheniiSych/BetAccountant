@@ -50,12 +50,14 @@ class ImageQuestionLevelFragment : Fragment() {
                         (activity as MainActivity).navigateToLevel(nextLevel)
                     }
                     Level.SECOND -> {
-                        StoryDialog.getInstance(
+                        StoryDialog(
                             requireContext(),
-                            getString(R.string.second_to_third_level_story)
-                        ) {
-                            (activity as MainActivity).showPromoVideoAndNavigateToLevel(nextLevel)
-                        }.show()
+                            getString(R.string.second_to_third_level_story), {
+                                (activity as MainActivity).showPromoVideoAndNavigateToLevel(
+                                    nextLevel
+                                )
+                            }
+                        ).show()
                     }
                     else -> Toast.makeText(
                         context,

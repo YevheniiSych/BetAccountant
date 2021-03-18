@@ -38,8 +38,7 @@ class SixthLevel : Fragment() {
     }
 
     private fun handleAnswerClick() {
-        val checkedItemsCount = getCheckedItemsCount()
-        if (checkedItemsCount != 3) {
+        if (getCheckedItemsCount() != 3) {
             Toast.makeText(context, getString(R.string.choose_only_three_facts), Toast.LENGTH_LONG)
                 .show()
         } else {

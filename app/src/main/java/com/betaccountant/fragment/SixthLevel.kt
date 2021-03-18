@@ -25,7 +25,7 @@ class SixthLevel : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_sixth_level, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_sixth_level, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

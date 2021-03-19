@@ -13,7 +13,7 @@ import kotlin.random.Random
 class GuessTermDialog(
     context: Context,
     private val term: String,
-    private val answerClick: (isRightAnswer: Boolean) -> Unit
+    private val answerClick: () -> Unit
 ) : Dialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +24,11 @@ class GuessTermDialog(
             guessTermDialogTxt.text = mixSymbols(term)
             guessTermAnswerBtn.setOnClickListener {
                 val answer = answerTermInput.text.toString().toLowerCase(Locale.ROOT)
-                answerClick(answer == term.toLowerCase(Locale.ROOT))
-                this@GuessTermDialog.dismiss()
+                val isRightAnswer = answer == term.toLowerCase(Locale.ROOT)
+                if(isRightAnswer) {
+                    answerClick()
+                    this@GuessTermDialog.dismiss()
+                }
             }
         }
         setContentView(dialogView)

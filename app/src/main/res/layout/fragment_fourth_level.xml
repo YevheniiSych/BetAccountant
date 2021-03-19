@@ -58,7 +58,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/thirdQuestionAnswerBtn"
+        android:id="@+id/finishGameButton"
         style="@style/baseButtonStyle"
         android:background="@drawable/answer_button_background"
         android:text="@string/answer"

@@ -11,6 +11,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.betaccountant.R
 import kotlinx.android.synthetic.main.layout_toolbar_view.view.*
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ToolbarView @JvmOverloads constructor(
     context: Context,
@@ -59,6 +62,14 @@ class ToolbarView @JvmOverloads constructor(
         timeCounter?.visibility = if (enabled) View.VISIBLE else View.GONE
     }
 
+    fun getTime(): Long = timeCounterStoppedTime
+
+    fun getFormattedTime(): String {
+        val simple: DateFormat = SimpleDateFormat("mm:ss")
+        val result = Date(getTime())
+        return simple.format(result)
+    }
+
     fun setLabel(labelTxt: String?) {
         label?.text = labelTxt
     }
@@ -93,6 +104,14 @@ class ToolbarView @JvmOverloads constructor(
         for (i in 1..maxLivesAmount!!) {
             toolbarLivesCounter.addView(createLifeView(if (i <= remainingLivesAmount!!) remainingLifeImg else usedLifeImg))
         }
+    }
+
+    fun hideLives() {
+        toolbarLivesCounter.visibility =View.GONE
+    }
+
+    fun hideTimer(){
+        toolbarTimeCounter.visibility = View.GONE
     }
 
     private fun readParams(context: Context) {

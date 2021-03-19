@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="fragment.ResultFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:textColor="@color/blue_36"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <TextView
+            android:id="@+id/resultTimeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="00:00"
+            android:textColor="@color/blue_36"
+            android:textColorLink="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/make_screenshot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultTimeTxt" />
+
+        <TextView
+            android:id="@+id/instagramLink"
+            style="@style/contactItemStyle"
+            android:layout_marginTop="50dp"
+            android:text="@string/kafedra_boo_uabs"
+            app:drawableStartCompat="@drawable/ic_instagram"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/facebookLink"
+            style="@style/contactItemStyle"
+            android:text="@string/facebook_link"
+            app:drawableStartCompat="@drawable/ic_facebook"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instagramLink" />
+
+        <TextView
+            android:id="@+id/siteLink"
+            style="@style/contactItemStyle"
+            android:text="@string/site_link"
+            app:drawableStartCompat="@drawable/ic_internet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/facebookLink" />
+
+        <TextView
+            android:id="@+id/phoneLink"
+            style="@style/contactItemStyle"
+            android:text="@string/phone_number"
+            app:drawableStartCompat="@drawable/ic_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/siteLink" />
+
+        <TextView
+            android:id="@+id/emailLink"
+            style="@style/contactItemStyle"
+            android:text="@string/email_link"
+            app:drawableStartCompat="@drawable/ic_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneLink" />
+
+        <TextView
+            android:id="@+id/locationLink"
+            style="@style/contactItemStyle"
+            android:text="@string/location_link"
+            app:drawableStartCompat="@drawable/ic_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailLink" />
+
+        <Button
+            android:id="@+id/finishGameButton"
+            style="@style/baseButtonStyle"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/answer_button_background"
+            android:text="@string/finish_game"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationLink"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

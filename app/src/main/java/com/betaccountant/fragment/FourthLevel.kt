@@ -22,7 +22,7 @@ class FourthLevel : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        thirdQuestionAnswerBtn.setOnClickListener {
+        finishGameButton.setOnClickListener {
             if(inputCode.text.toString() == ANSWER_CODE){
                 (activity as MainActivity).showPromoVideoAndNavigateToLevel(Level.FIFTH)
             }

@@ -36,7 +36,15 @@
     <string name="eighth_level_question">В який кабінет потрібно здавати Баланс?</string>
     <string name="guess_dialog_info">На жаль, це не правильний кабінет (\nЩоб спробувати ще раз, відгадай бухгалтерський термін</string>
     <string name="mission_complete">"Вітаємо!!!\nБаланс потрапив за призначенням!\n\nМісію виконано! "</string>
-
+    <string name="finish_game">Завершити гру</string>
+    <string name="kafedra_boo_uabs"><u>kafedra_boo_uabs</u></string>
+    <string name="facebook_link"><u>buchuchet.uabs.sumdu</u></string>
+    <string name="site_link"><u>http://buchuchet.uabs.sumdu.edu.ua</u></string>
+    <string name="phone_number"><u>0996674401</u></string>
+    <string name="email_link"><u>boa@uabs.sumdu.edu.ua</u></string>
+    <string name="location_link"><u>м. Суми, вул Петропавлівська, 57</u></string>
+    <string name="result">Результат:</string>
+    <string name="make_screenshot">*зроби знімок екрану з таймером</string>
 
     <string-array name="terms">
         <item>Капітал</item>

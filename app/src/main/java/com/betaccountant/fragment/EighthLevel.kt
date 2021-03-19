@@ -11,9 +11,11 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.betaccountant.MainActivity
 import com.betaccountant.R
 import com.betaccountant.dialog.GuessTermDialog
 import com.betaccountant.dialog.StoryDialog
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_eighth_level.*
 import kotlin.random.Random
 
@@ -37,21 +39,16 @@ class EighthLevel : Fragment() {
             imageView.setOnClickListener {
                 it.visibility = View.INVISIBLE
                 if (isRightDoor()) {
+                    (activity as MainActivity).toolbar?.pauseTimeCounter()
                     StoryDialog(requireContext(), getString(R.string.mission_complete),{
-
+                        (activity as MainActivity).navController?.navigate(R.id.resultFragment)
                     }).show()
                     return@setOnClickListener
                 } else {
                     imageList?.remove(it)
                     val randomTerm = termList.random()
                     termList.remove(randomTerm)
-                    GuessTermDialog(requireContext(), randomTerm) { isRightAnswer ->
-                        Toast.makeText(
-                            requireContext(),
-                            isRightAnswer.toString(),
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }.show()
+                    GuessTermDialog(requireContext(), randomTerm) {}.show()
                 }
                 doorCount--
             }

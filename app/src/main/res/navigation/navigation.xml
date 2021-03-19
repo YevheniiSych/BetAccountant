@@ -53,5 +53,11 @@
         android:label="fragment_eighth_level"
         tools:layout="@layout/fragment_eighth_level" />
 
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.betaccountant.fragment.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+
 
 </navigation>

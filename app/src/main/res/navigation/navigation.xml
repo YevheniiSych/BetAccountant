@@ -58,6 +58,11 @@
         android:name="com.betaccountant.fragment.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.betaccountant.fragment.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 
 
 </navigation>

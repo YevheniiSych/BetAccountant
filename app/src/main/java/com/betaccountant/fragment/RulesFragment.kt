@@ -1,30 +1,32 @@
 package com.betaccountant.fragment
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_start.*
+import kotlinx.android.synthetic.main.fragment_rules.*
 
-class StartFragment : Fragment() {
+
+class RulesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_start, container, false)
-    }
+    ): View? = inflater.inflate(R.layout.fragment_rules, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        startBtn.setOnClickListener {
-            (activity as MainActivity).navController?.navigate(R.id.rulesFragment)
+        continueRulesBtn.setOnClickListener {
+            activity?.toolbar?.timeCounterEnabled(true)
+            activity?.toolbar?.livesCounterEnabled(true)
+            activity?.toolbar?.resetTimeCounter()
+            activity?.toolbar?.startTimeCounter()
+            (activity as MainActivity).navigateToLevel(Level.FIRST)
         }
-        activity?.toolbar?.setLabel(R.string.app_name)
     }
 }

@@ -90,7 +90,7 @@ class ToolbarView @JvmOverloads constructor(
         return maxLivesAmount!!
     }
 
-    private fun getRemainingLivesAmount(): Int {
+    fun getRemainingLivesAmount(): Int {
         return remainingLivesAmount!!
     }
 

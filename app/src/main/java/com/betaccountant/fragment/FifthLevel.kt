@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
+import com.betaccountant.dialog.GameOverDialog
 import com.betaccountant.dialog.OneWrongStatementTaskDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
@@ -63,6 +64,11 @@ class FifthLevel : Fragment() {
 //            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
         } else {
             activity?.toolbar?.subtractOneLife()
+            if(activity?.toolbar?.getRemainingLivesAmount() == 0){
+                GameOverDialog(requireContext()){
+                    activity?.finish()
+                }.show()
+            }
         }
         showBalanceDialog()
     }

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
 import com.betaccountant.dialog.BoolQuestionDialog
+import com.betaccountant.dialog.GameOverDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.enums.Locations
@@ -73,6 +74,11 @@ class ThirdLevel : Fragment() {
 //            Toast.makeText(context, "right", Toast.LENGTH_LONG).show()
         } else {
             activity?.toolbar?.subtractOneLife()
+            if(activity?.toolbar?.getRemainingLivesAmount() == 0){
+                GameOverDialog(requireContext()){
+                    activity?.finish()
+                }.show()
+            }
         }
         showDirectorDialog()
     }

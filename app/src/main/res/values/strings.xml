@@ -45,6 +45,8 @@
     <string name="location_link"><u>м. Суми, вул Петропавлівська, 57</u></string>
     <string name="result">Результат:</string>
     <string name="make_screenshot">*зроби знімок екрану з таймером</string>
+    <string name="restart">Рестарт</string>
+    <string name="complete">Завершити</string>
 
     <string-array name="terms">
         <item>Капітал</item>

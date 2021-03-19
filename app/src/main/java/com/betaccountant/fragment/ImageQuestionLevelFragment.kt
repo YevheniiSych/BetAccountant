@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.MainActivity.Companion.FRAGMENT_LEVEL
@@ -52,19 +53,24 @@ class ImageQuestionLevelFragment : Fragment() {
                     Level.SECOND -> {
                         StoryDialog(
                             requireContext(),
-                            getString(R.string.second_to_third_level_story), {
+                            getString(R.string.second_to_third_level_story),
+                            {
                                 (activity as MainActivity).showPromoVideoAndNavigateToLevel(
                                     nextLevel
                                 )
-                            }
+                            },
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.man_with_calculator
+                            ),
+                            true
                         ).show()
                     }
                     else -> Toast.makeText(
                         context,
                         getString(R.string.unexpected_error),
                         Toast.LENGTH_LONG
-                    )
-                        .show()
+                    ).show()
                 }
             }
         }

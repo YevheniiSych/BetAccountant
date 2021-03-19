@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
@@ -74,7 +75,12 @@ class FifthLevel : Fragment() {
                 if (isBalanceLocation) {
                     (activity as MainActivity).navigateToLevel(Level.SIXTH)
                 }
-            }
+            }, if (isBalanceLocation) {
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.man_with_calculator
+                )
+            } else null
         ).show()
     }
 

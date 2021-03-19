@@ -41,6 +41,7 @@ class EighthLevel : Fragment() {
                 if (isRightDoor()) {
                     (activity as MainActivity).toolbar?.pauseTimeCounter()
                     StoryDialog(requireContext(), getString(R.string.mission_complete),{
+                        (activity as MainActivity).showPromoVideoAndNavigateToLevel()
                         (activity as MainActivity).navController?.navigate(R.id.resultFragment)
                     }).show()
                     return@setOnClickListener

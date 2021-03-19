@@ -17,23 +17,6 @@ class BoolQuestionDialog(
     private val answerListener: (isRightAnswer: Boolean) -> Unit
 ) : Dialog(context) {
 
-    companion object {
-        private var instance: BoolQuestionDialog? = null
-        fun getInstance(
-            context: Context,
-            question: String?,
-            answer: Boolean,
-            answerListener: (isRightAnswer: Boolean) -> Unit
-        ): BoolQuestionDialog {
-            return if (instance == null) BoolQuestionDialog(
-                context,
-                question,
-                answer,
-                answerListener
-            ) else instance!!
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dialogView = layoutInflater.inflate(R.layout.bool_question_dialog_layout, null)

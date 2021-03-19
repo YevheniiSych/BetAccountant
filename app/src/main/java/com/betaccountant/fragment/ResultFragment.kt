@@ -32,7 +32,7 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as MainActivity).toolbar?.setLabel("Квест Бухгалтер")
+        (activity as MainActivity).toolbar?.setLabel(getString(R.string.app_name))
         (activity as MainActivity).toolbar?.hideLives()
         (activity as MainActivity).toolbar?.hideTimer()
         val resultTime =  (activity as MainActivity).toolbar?.getFormattedTime()

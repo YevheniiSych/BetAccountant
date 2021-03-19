@@ -21,21 +21,6 @@ class OneWrongStatementTaskDialog(
     private val answerListener: (isRightAnswer: Boolean) -> Unit
 ) : Dialog(context) {
 
-    companion object {
-        private var instance: OneWrongStatementTaskDialog? = null
-        fun getInstance(
-            context: Context,
-            facts: List<Fact>,
-            answerListener: (isRightAnswer: Boolean) -> Unit
-        ): OneWrongStatementTaskDialog {
-            return if (instance == null) OneWrongStatementTaskDialog(
-                context,
-                facts,
-                answerListener
-            ) else instance!!
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dialogView = layoutInflater.inflate(R.layout.one_wrong_statement_task_dialog_layout, null)

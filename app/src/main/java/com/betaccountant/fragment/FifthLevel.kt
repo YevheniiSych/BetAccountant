@@ -48,7 +48,7 @@ class FifthLevel : Fragment() {
         val randomGroupId = allFactsList.random().groupId
         val oneTaskFactsList = allFactsList.filter { it.groupId == randomGroupId }
         allFactsList = allFactsList.filterNot { it.groupId == randomGroupId } as ArrayList<Fact>
-        OneWrongStatementTaskDialog.getInstance(
+        OneWrongStatementTaskDialog(
             requireContext(),
             oneTaskFactsList,
         ) {

@@ -58,7 +58,7 @@ class ThirdLevel : Fragment() {
         val question = questionsWithAnswers.keys.random()
         val answer = getBoolAnswerByQuestion(question)
         questionsWithAnswers.remove(question)
-        BoolQuestionDialog.getInstance(
+        BoolQuestionDialog(
             requireContext(),
             question,
             answer

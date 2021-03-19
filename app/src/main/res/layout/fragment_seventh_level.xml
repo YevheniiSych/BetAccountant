@@ -20,6 +20,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
@@ -38,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/pass_word_contains"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -53,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/input_answer"
+            android:backgroundTint="@color/blue_36"
             android:importantForAutofill="no"
             android:inputType="text"
             android:textSize="@dimen/sp_20"
@@ -60,12 +63,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <Button
+        <TextView
             android:id="@+id/seventhLvlAnswerBtn"
             style="@style/baseButtonStyle"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/answer_button_background"
+            android:background="@drawable/answer_btn_bg"
             android:text="@string/answer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

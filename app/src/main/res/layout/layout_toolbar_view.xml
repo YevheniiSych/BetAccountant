@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_200"
+    android:background="@color/blue_36"
     android:orientation="horizontal"
     android:paddingHorizontal="@dimen/toolbar_horizontal_padding"
     android:paddingVertical="@dimen/toolbar_vertical_padding">

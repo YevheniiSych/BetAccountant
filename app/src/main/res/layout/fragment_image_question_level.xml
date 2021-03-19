@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/first_level_question"
             android:textSize="@dimen/sp_20"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,15 +47,16 @@
             android:importantForAutofill="no"
             android:inputType="number"
             android:textSize="@dimen/sp_20"
+            android:backgroundTint="@color/blue_36"
             app:layout_constraintBottom_toTopOf="@+id/answerBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/questionImg" />
 
-        <Button
+        <TextView
             android:id="@+id/answerBtn"
             style="@style/baseButtonStyle"
-            android:background="@drawable/answer_button_background"
+            android:background="@drawable/answer_btn_bg"
             android:text="@string/answer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

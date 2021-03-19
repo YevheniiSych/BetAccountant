@@ -29,12 +29,12 @@
     </FrameLayout>
 
 
-    <Button
+    <TextView
         android:id="@+id/continueStoryBtn"
         style="@style/baseButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/answer_button_background"
+        android:background="@drawable/answer_btn_bg"
         android:text="@string/сontinue" />
 </LinearLayout>

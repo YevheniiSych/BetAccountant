@@ -18,19 +18,20 @@
         android:text="@string/one_wrong_statement_task_text"
         android:textSize="20sp"
         android:gravity="center"
+        android:textColor="@color/black"
         android:layout_marginBottom="20dp"/>
     <RadioGroup
         android:id="@+id/oneWrongStatementTaskRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/answerBtn"
-        style="@style/baseButtonStyle"
-        android:background="@drawable/answer_button_background"
-        android:text="@string/answer"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/answerBtn"
+            style="@style/baseButtonStyle"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/answer_btn_bg"
+            android:text="@string/answer" />
 
     </LinearLayout>
 

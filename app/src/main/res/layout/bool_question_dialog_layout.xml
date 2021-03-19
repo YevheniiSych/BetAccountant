@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose_right_answer"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,12 +29,12 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <Button
+        <TextView
             android:id="@+id/questionDialogYesBtn"
             style="@style/baseButtonStyle"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/answer_button_background"
+            android:background="@drawable/answer_btn_bg"
             android:text="@string/yes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,12 +42,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <TextView
             android:id="@+id/questionDialogNoBtn"
             style="@style/baseButtonStyle"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/answer_button_background"
+            android:background="@drawable/answer_btn_bg"
             android:text="@string/no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

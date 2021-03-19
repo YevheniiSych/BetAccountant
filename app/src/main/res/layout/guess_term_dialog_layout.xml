@@ -46,15 +46,16 @@
         android:hint="@string/input_answer"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:backgroundTint="@color/blue_36"
         android:textSize="@dimen/sp_20"/>
 
 
-    <Button
+    <TextView
         android:id="@+id/guessTermAnswerBtn"
         style="@style/baseButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/answer_button_background"
+        android:background="@drawable/answer_btn_bg"
         android:text="@string/answer" />
 </LinearLayout>

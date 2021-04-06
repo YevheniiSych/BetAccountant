@@ -76,7 +76,7 @@ class ImageQuestionLevelFragment : Fragment() {
             } else {
                 tryCount++
                 when (tryCount) {
-                    3 -> showStoryDialog(
+                    3 -> showWrongAnswerDialog(
                         getString(
                             when (currentLevel) {
                                 Level.FIRST -> R.string.continue_numbers_line
@@ -85,7 +85,7 @@ class ImageQuestionLevelFragment : Fragment() {
                             }
                         )
                     )
-                    5 -> showStoryDialog(
+                    5 -> showWrongAnswerDialog(
                         getString(
                             when (currentLevel) {
                                 Level.FIRST -> R.string.first_level_right_answer
@@ -94,13 +94,13 @@ class ImageQuestionLevelFragment : Fragment() {
                             }
                         )
                     )
-                    else -> showStoryDialog(getString(R.string.wrong_answer))
+                    else -> showWrongAnswerDialog(getString(R.string.wrong_answer))
                 }
             }
         }
     }
 
-    private fun showStoryDialog(text: String) {
+    private fun showWrongAnswerDialog(text: String) {
         StoryDialog(
             requireContext(),
             text, {}

@@ -45,57 +45,9 @@ class ImageQuestionLevelFragment : Fragment() {
         }
         answerBtn.setOnClickListener {
             if (answerInput.text.toString() == FIRST_AND_SECOND_LEVEL_ANSWER && currentLevel != null) {
-                val nextLevel =
-                    Level.values()[currentLevel!!.value] // current value because indices starts from 0
-                when (currentLevel) {
-                    Level.FIRST -> {
-                        (activity as MainActivity).navigateToLevel(nextLevel)
-                    }
-                    Level.SECOND -> {
-                        StoryDialog(
-                            requireContext(),
-                            getString(R.string.second_to_third_level_story),
-                            {
-                                (activity as MainActivity).showPromoVideoAndNavigateToLevel(
-                                    nextLevel
-                                )
-                            },
-                            ContextCompat.getDrawable(
-                                requireContext(),
-                                R.drawable.man_with_calculator
-                            ),
-                            true
-                        ).show()
-                    }
-                    else -> Toast.makeText(
-                        context,
-                        getString(R.string.unexpected_error),
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
+                handleRightAnswer()
             } else {
-                tryCount++
-                when (tryCount) {
-                    3 -> showWrongAnswerDialog(
-                        getString(
-                            when (currentLevel) {
-                                Level.FIRST -> R.string.continue_numbers_line
-                                Level.SECOND -> R.string.remember_actives
-                                else -> R.string.remember_actives
-                            }
-                        )
-                    )
-                    5 -> showWrongAnswerDialog(
-                        getString(
-                            when (currentLevel) {
-                                Level.FIRST -> R.string.first_level_right_answer
-                                Level.SECOND -> R.string.second_level_right_answer
-                                else -> R.string.second_level_right_answer
-                            }
-                        )
-                    )
-                    else -> showWrongAnswerDialog(getString(R.string.wrong_answer))
-                }
+                handleWrongAnswer()
             }
         }
     }
@@ -115,5 +67,65 @@ class ImageQuestionLevelFragment : Fragment() {
     private fun setSecondFragment() {
         questionTxt.text = getText(R.string.second_level_question)
         questionImg.setImageResource(R.drawable.second_level_task)
+    }
+
+    private fun handleRightAnswer() {
+        val nextLevel =
+            Level.values()[currentLevel!!.value] // current value because indices starts from 0
+        when (currentLevel) {
+            Level.FIRST -> {
+                (activity as MainActivity).navigateToLevel(nextLevel)
+            }
+            Level.SECOND -> {
+                handleSecondLevelRightAnswer(nextLevel)
+            }
+            else -> Toast.makeText(
+                context,
+                getString(R.string.unexpected_error),
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun handleSecondLevelRightAnswer(nextLevel: Level) {
+        StoryDialog(
+            requireContext(),
+            getString(R.string.second_to_third_level_story),
+            {
+                (activity as MainActivity).showPromoVideoAndNavigateToLevel(
+                    nextLevel
+                )
+            },
+            ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.man_with_calculator
+            ),
+            true
+        ).show()
+    }
+
+    private fun handleWrongAnswer() {
+        tryCount++
+        when (tryCount) {
+            3 -> showWrongAnswerDialog(
+                getString(
+                    when (currentLevel) {
+                        Level.FIRST -> R.string.continue_numbers_line
+                        Level.SECOND -> R.string.remember_actives
+                        else -> R.string.remember_actives
+                    }
+                )
+            )
+            5 -> showWrongAnswerDialog(
+                getString(
+                    when (currentLevel) {
+                        Level.FIRST -> R.string.first_level_right_answer
+                        Level.SECOND -> R.string.second_level_right_answer
+                        else -> R.string.second_level_right_answer
+                    }
+                )
+            )
+            else -> showWrongAnswerDialog(getString(R.string.wrong_answer))
+        }
     }
 }

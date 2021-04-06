@@ -20,6 +20,7 @@ class ImageQuestionLevelFragment : Fragment() {
         private const val FIRST_AND_SECOND_LEVEL_ANSWER = "22"
     }
 
+    private var tryCount = 0
     private var currentLevel: Level? = null
 
     override fun onCreateView(
@@ -72,8 +73,38 @@ class ImageQuestionLevelFragment : Fragment() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+            } else {
+                tryCount++
+                when (tryCount) {
+                    3 -> showStoryDialog(
+                        getString(
+                            when (currentLevel) {
+                                Level.FIRST -> R.string.continue_numbers_line
+                                Level.SECOND -> R.string.remember_actives
+                                else -> R.string.remember_actives
+                            }
+                        )
+                    )
+                    5 -> showStoryDialog(
+                        getString(
+                            when (currentLevel) {
+                                Level.FIRST -> R.string.first_level_right_answer
+                                Level.SECOND -> R.string.second_level_right_answer
+                                else -> R.string.second_level_right_answer
+                            }
+                        )
+                    )
+                    else -> showStoryDialog(getString(R.string.wrong_answer))
+                }
             }
         }
+    }
+
+    private fun showStoryDialog(text: String) {
+        StoryDialog(
+            requireContext(),
+            text, {}
+        ).show()
     }
 
     private fun setFirstFragment() {

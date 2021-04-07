@@ -55,6 +55,8 @@
     <string name="second_level_right_answer">Підказка: правильна відповідь 22!</string>
     <string name="wrong_answer">Це неправильна відповідь, спробуй ще раз!</string>
     <string name="third_level_task">Щоб перевірити, чи є тут директор, дай відповідь на коротке запитання! Будь уважний, неправильна відповідь забирає життя!</string>
+    <string name="fifth_level_task">Щоб дізнатися куди здавати баланс, дай відповідь на коротке запитання! Будь уважний, неправильна відповідь забирає життя!</string>
+    <string name="fifth_level_start_story">Куди Be$t Бухгалтеру здавати Баланс?</string>
 
     <string-array name="terms">
         <item>Капітал</item>

@@ -31,6 +31,15 @@ class FifthLevel : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        StoryDialog(
+            requireContext(),
+            getString(R.string.fifth_level_start_story), {},
+            ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.man_with_calculator
+            ),
+            true
+        ).show()
         init()
     }
 

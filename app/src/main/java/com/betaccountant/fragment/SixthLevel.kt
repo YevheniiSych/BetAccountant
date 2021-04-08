@@ -11,10 +11,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
-import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
-import com.betaccountant.model.Fact
+import com.betaccountant.db.model.Fact
 import kotlinx.android.synthetic.main.fragment_sixth_level.*
 
 class SixthLevel : Fragment() {

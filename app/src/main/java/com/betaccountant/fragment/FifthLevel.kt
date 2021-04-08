@@ -13,7 +13,7 @@ import com.betaccountant.dialog.OneWrongStatementTaskDialog
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import com.betaccountant.enums.Locations
-import com.betaccountant.model.Fact
+import com.betaccountant.db.model.Fact
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_fifth_level.*
 

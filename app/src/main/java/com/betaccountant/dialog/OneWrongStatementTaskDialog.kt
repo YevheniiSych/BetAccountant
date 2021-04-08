@@ -11,7 +11,7 @@ import android.widget.LinearLayout
 import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import com.betaccountant.R
-import com.betaccountant.model.Fact
+import com.betaccountant.db.model.Fact
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.*
 import kotlinx.android.synthetic.main.one_wrong_statement_task_dialog_layout.view.*
 

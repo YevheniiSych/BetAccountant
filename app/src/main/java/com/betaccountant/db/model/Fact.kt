@@ -1,5 +1,8 @@
-package com.betaccountant.model
+package com.betaccountant.db.model
 
+import androidx.room.Entity
+
+@Entity
 data class Fact(
     val text: String,
     val isTrue: Boolean,

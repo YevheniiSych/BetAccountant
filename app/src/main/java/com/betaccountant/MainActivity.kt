@@ -5,9 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.betaccountant.db.AccountantDB
+import com.betaccountant.db.getTasksFromStorage
 import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        fillDB()
         setContentView(R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.fragment_container)
     }
@@ -80,6 +85,13 @@ class MainActivity : AppCompatActivity() {
             if (nextLevel != null) {
                 navigateToLevel(nextLevel)
             }
+        }
+    }
+
+    private fun fillDB() {
+        GlobalScope.launch {
+            val db = AccountantDB.getInstance(this@MainActivity)
+            db.taskDao().insertAll(getTasksFromStorage())
         }
     }
 

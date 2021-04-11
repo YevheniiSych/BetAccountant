@@ -8,5 +8,5 @@ import com.betaccountant.db.model.Task
 @Dao
 interface TaskDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(tasks: List<Task>)
+    suspend fun insertAll(tasks: List<Task>)
 }

@@ -89,8 +89,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fillDB() {
+        val db = AccountantDB.getInstance(this)
         GlobalScope.launch {
-            val db = AccountantDB.getInstance(this@MainActivity)
             db.taskDao().insertAll(getTasksFromStorage())
         }
     }

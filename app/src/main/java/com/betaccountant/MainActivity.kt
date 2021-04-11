@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.betaccountant.db.AccountantDB
+import com.betaccountant.db.getFactsList
 import com.betaccountant.db.getTasksFromStorage
 import com.betaccountant.dialog.PromoVideoDialog
 import com.betaccountant.enums.Level
@@ -91,7 +92,9 @@ class MainActivity : AppCompatActivity() {
     private fun fillDB() {
         val db = AccountantDB.getInstance(this)
         GlobalScope.launch {
+            db.clearAllTables()
             db.taskDao().insertAll(getTasksFromStorage())
+            db.factDao().insertAll(getFactsList())
         }
     }
 

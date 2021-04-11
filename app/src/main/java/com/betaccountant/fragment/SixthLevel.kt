@@ -11,10 +11,15 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.R
+import com.betaccountant.db.AccountantDB
+import com.betaccountant.db.model.Fact
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
-import com.betaccountant.db.model.Fact
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.fragment_sixth_level.*
+
 
 class SixthLevel : Fragment() {
 
@@ -31,10 +36,14 @@ class SixthLevel : Fragment() {
         sixLVLAnswerBtn.setOnClickListener {
             handleAnswerClick()
         }
-        checkBoxFactsList = ArrayList()
-        factsList = getFactsList()
-        factsList?.forEach { checkBoxFactsList?.add(createCheckBox(it)) }
-        checkBoxFactsList?.forEach { factsLayout.addView(it) }
+        GlobalScope.launch {
+            factsList = AccountantDB.getInstance(requireContext()).factDao().getFactsByLevel(6) as ArrayList<Fact>?
+            activity?.runOnUiThread {
+                checkBoxFactsList = ArrayList()
+                factsList?.forEach { checkBoxFactsList?.add(createCheckBox(it)) }
+                checkBoxFactsList?.forEach { factsLayout.addView(it) }
+            }
+        }
     }
 
     private fun handleAnswerClick() {
@@ -64,7 +73,7 @@ class SixthLevel : Fragment() {
         checkBoxFactsList?.forEach { checkBox ->
             if (checkBox.isChecked) {
                 factsList?.forEach { fact ->
-                    if(fact.text == checkBox.text && fact.isTrue){
+                    if (fact.text == checkBox.text && fact.isTrue) {
                         rightAnswersCount++
                     }
                 }
@@ -92,28 +101,4 @@ class SixthLevel : Fragment() {
                 )
             buttonTintList = ContextCompat.getColorStateList(context, R.color.border_grey)
         }
-
-    private fun getFactsList() = listOf(
-        Fact(
-            "Сьогоднішній топ-100 багатіїв планети заробили достатньо для того, щоб покінчити з глобальною бідністю 4 рази",
-            true
-        ),
-        Fact(
-            "У 1923 році гіперінфляція в Німеччині була настільки великою, що люди спалювали гроші для того, щоб зігрітися. Тому що це було дешевше, ніж купити дрова",
-            true
-        ),
-        Fact(
-            "Барак Обама став першим президентом, якого почали зображати на доларових купюрах за життя",
-            false
-        ),
-        Fact(
-            "До середини XX століття в деяких частинах Африки в якості грошей продовжували використовувати домашню худобу",
-            true
-        ),
-        Fact(
-            "Зміни клімату призвели до того, що деякі племена Африки почали використовувати сніг у якості грошей",
-            false
-        )
-    )
-
 }

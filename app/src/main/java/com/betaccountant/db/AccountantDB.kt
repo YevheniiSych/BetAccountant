@@ -4,22 +4,25 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.betaccountant.db.dao.FactDao
 import com.betaccountant.db.dao.ImageDao
 import com.betaccountant.db.dao.StoryDao
 import com.betaccountant.db.dao.TaskDao
+import com.betaccountant.db.model.Fact
 import com.betaccountant.db.model.Image
 import com.betaccountant.db.model.Story
 import com.betaccountant.db.model.Task
 
 
 @Database(
-    entities = [Task::class, Image::class, Story::class],
-    version = 1
+    entities = [Task::class, Image::class, Story::class, Fact::class],
+    version = 2
 )
 abstract class AccountantDB : RoomDatabase() {
     abstract fun taskDao(): TaskDao
     abstract fun imageDao(): ImageDao
     abstract fun storyDao(): StoryDao
+    abstract fun factDao(): FactDao
 
     companion object {
         private const val DATABASE = "Accountant"
@@ -37,6 +40,7 @@ abstract class AccountantDB : RoomDatabase() {
 
         private fun buildDatabase(context: Context): AccountantDB {
             return Room.databaseBuilder(context, AccountantDB::class.java, DATABASE)
+                .fallbackToDestructiveMigration()
                 .build()
         }
     }

@@ -10,18 +10,19 @@ import androidx.fragment.app.Fragment
 import com.betaccountant.MainActivity
 import com.betaccountant.MainActivity.Companion.FRAGMENT_LEVEL
 import com.betaccountant.R
+import com.betaccountant.db.AccountantDB
 import com.betaccountant.dialog.StoryDialog
 import com.betaccountant.enums.Level
 import kotlinx.android.synthetic.main.fragment_image_question_level.*
+import kotlinx.android.synthetic.main.fragment_sixth_level.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class ImageQuestionLevelFragment : Fragment() {
 
-    companion object {
-        private const val FIRST_AND_SECOND_LEVEL_ANSWER = "22"
-    }
-
     private var tryCount = 0
     private var currentLevel: Level? = null
+    private var answer: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +45,7 @@ class ImageQuestionLevelFragment : Fragment() {
                 .show()
         }
         answerBtn.setOnClickListener {
-            if (answerInput.text.toString() == FIRST_AND_SECOND_LEVEL_ANSWER && currentLevel != null) {
+            if (answerInput.text.toString() == answer && currentLevel != null) {
                 handleRightAnswer()
             } else {
                 handleWrongAnswer()
@@ -59,14 +60,22 @@ class ImageQuestionLevelFragment : Fragment() {
         ).show()
     }
 
-    private fun setFirstFragment() {
-        questionTxt.text = getText(R.string.first_level_question)
-        questionImg.setImageResource(R.drawable.first_level_task)
+    private fun setFirstFragment() = GlobalScope.launch {
+        val task = AccountantDB.getInstance(requireContext()).taskDao().getTaskByLevel(1)
+        activity?.runOnUiThread {
+            questionTxt.text = "${task?.taskDesc} ${task?.question}"
+            answer = task?.rightAnswer
+            questionImg.setImageResource(R.drawable.first_level_task)
+        }
     }
 
-    private fun setSecondFragment() {
-        questionTxt.text = getText(R.string.second_level_question)
-        questionImg.setImageResource(R.drawable.second_level_task)
+    private fun setSecondFragment() = GlobalScope.launch {
+        val task = AccountantDB.getInstance(requireContext()).taskDao().getTaskByLevel(2)
+        activity?.runOnUiThread {
+            questionTxt.text = "${task?.taskDesc} ${task?.question}"
+            answer = task?.rightAnswer
+            questionImg.setImageResource(R.drawable.second_level_task)
+        }
     }
 
     private fun handleRightAnswer() {

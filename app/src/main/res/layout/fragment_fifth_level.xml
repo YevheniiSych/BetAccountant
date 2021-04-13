@@ -23,16 +23,16 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/libraryContainer"
+            android:id="@+id/administrationContainer"
             style="@style/thirdFifthLevelItemsStyle">
 
             <ImageView
                 style="@style/thirdFifthLevelItemImageStyle"
-                android:src="@drawable/library" />
+                android:src="@drawable/administration" />
 
             <TextView
                 style="@style/thirdFifthLevelItemTextStyle"
-                android:text="@string/library" />
+                android:text="@string/administration" />
 
         </LinearLayout>
 
@@ -70,11 +70,11 @@
 
             <ImageView
                 style="@style/thirdFifthLevelItemImageStyle"
-                android:src="@drawable/shop" />
+                android:src="@drawable/fond" />
 
             <TextView
                 style="@style/thirdFifthLevelItemTextStyle"
-                android:text="@string/shop" />
+                android:text="@string/fond" />
 
         </LinearLayout>
 

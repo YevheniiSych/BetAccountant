@@ -55,7 +55,7 @@ class FifthLevel : Fragment() {
 
     private fun init() {
         balanceLocation = Locations.TAX_OFFICE
-        libraryContainer.setOnClickListener(this::handleItemClick)
+        administrationContainer.setOnClickListener(this::handleItemClick)
         bankBalanceContainer.setOnClickListener(this::handleItemClick)
         taxContainer.setOnClickListener {
             isBalanceLocation = balanceLocation == Locations.TAX_OFFICE

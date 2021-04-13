@@ -19,9 +19,9 @@
     <string name="third_level_start_story">Тепер допоможи БетБухгалтеру знайти директора і підписати баланс!\nВгадай, де знаходиться директор?</string>
     <string name="сontinue">Продовжити</string>
     <string name="fourth_level_question">Тепер Баланс заповнений і підписаний! Його потрібно залишити в сейфі.\n\nПідбери код до сейфу.</string>
-    <string name="library">Бібліотека</string>
+    <string name="administration">Адміністрація</string>
     <string name="tax">Податкова</string>
-    <string name="shop">Магазин</string>
+    <string name="fond">Пенційний фонд</string>
     <string name="choose_right_answer">Обери правильну відповідь:</string>
     <string name="director_found">Вітаємо! Ти знайшов директора.</string>
     <string name="director_not_found">На жаль, ти не знайшов директора. Cпробуй в іншому місці</string>

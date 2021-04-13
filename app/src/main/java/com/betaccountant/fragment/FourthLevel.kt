@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_fourth_level.*
 
 class FourthLevel : Fragment() {
     companion object{
-        private const val ANSWER_CODE = "4127690"
+        private const val ANSWER_CODE = "35240"
     }
 
     override fun onCreateView(

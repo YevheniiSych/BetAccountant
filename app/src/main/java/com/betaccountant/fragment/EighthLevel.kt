@@ -27,7 +27,7 @@ import kotlin.random.Random
 class EighthLevel : Fragment() {
 
     private var imageList: ArrayList<FrameLayout>? = null
-    private var captionsList = listOf(
+    private val captionsList = listOf(
         "начальник відділу:\nПекло О.О.",
         "головний бухгалтер:\nЗагребло Д.А.",
         "секретар:\nПомагайло Н.І.",
@@ -35,6 +35,13 @@ class EighthLevel : Fragment() {
         "консультант:\nВдячний О.Т.",
         "головний економіст:\nЩедрий А.Д."
     )
+    private val messagesList = listOf(
+        "Цей спеціаліст зайнятий, спробуй інші двері.",
+        "Обідня перерва.",
+        "Сьогодні не приймальний день.",
+        "Цей працівник у відпустці.",
+        "Цей працівник на лікарняному.",
+    ).toMutableList()
     private var doorCount = 6
 
     override fun onCreateView(
@@ -61,7 +68,10 @@ class EighthLevel : Fragment() {
                     imageList?.remove(it)
                     val randomTerm = termList.random()
                     termList.remove(randomTerm)
-                    GuessTermDialog(requireContext(), randomTerm) {}.show()
+                    val randomText = messagesList.random()
+                    messagesList.remove(randomText)
+                    GuessTermDialog(requireContext(),
+                        "$randomText\nЩоб спробувати ще раз, відгадай бухгалтерський термін.",randomTerm) {}.show()
                 }
                 doorCount--
             }

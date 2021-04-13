@@ -12,6 +12,7 @@ import kotlin.random.Random
 
 class GuessTermDialog(
     context: Context,
+    private val text: String,
     private val term: String,
     private val answerClick: () -> Unit
 ) : Dialog(context) {
@@ -21,6 +22,7 @@ class GuessTermDialog(
         val dialogView =
             layoutInflater.inflate(R.layout.guess_term_dialog_layout, null)
         dialogView.apply {
+            guessTermDialogText.text = text
             guessTermDialogTxt.text = mixSymbols(term)
             guessTermAnswerBtn.setOnClickListener {
                 val answer = answerTermInput.text.toString().toLowerCase(Locale.ROOT)

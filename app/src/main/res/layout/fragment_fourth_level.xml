@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@color/mainBackgroundColor"
     tools:context=".fragment.FourthLevel">
 
     <TextView
@@ -12,14 +12,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/fourth_level_question"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        app:layout_constraintWidth_percent="0.9"
-        android:textColor="@color/black"/>
+        app:layout_constraintWidth_percent="0.9" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -44,11 +44,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:gravity="center"
-            android:inputType="number"
-            android:importantForAutofill="no"
-            android:maxLength="7"
             android:backgroundTint="@color/blue_36"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.617"

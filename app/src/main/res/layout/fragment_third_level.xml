@@ -3,17 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackgroundColor"
     tools:context=".fragment.ThirdLevel">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/third_level_task"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/third_level_task"
         android:textColor="@color/black"
-        android:gravity="center"/>
+        android:textSize="20sp" />
 
     <GridLayout
         android:layout_width="wrap_content"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackgroundColor"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,10 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/say_password_for_duty"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
@@ -30,9 +31,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/transparent_background_with_border"
             android:orientation="vertical"
+            android:padding="10dp"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:layout_editor_absoluteX="20dp"
-            android:padding="10dp">
+            tools:layout_editor_absoluteX="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,8 +46,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/seventh_level_task" />
+                android:text="@string/seventh_level_task"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <EditText
@@ -54,8 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/input_answer"
             android:backgroundTint="@color/blue_36"
+            android:hint="@string/input_answer"
             android:importantForAutofill="no"
             android:inputType="text"
             android:textSize="@dimen/sp_20"

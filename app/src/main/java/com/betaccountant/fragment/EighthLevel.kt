@@ -1,5 +1,8 @@
 package com.betaccountant.fragment
 
+import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -8,7 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -23,7 +26,7 @@ import kotlin.random.Random
 
 class EighthLevel : Fragment() {
 
-    private var imageList: ArrayList<LinearLayout>? = null
+    private var imageList: ArrayList<FrameLayout>? = null
     private var captionsList = listOf(
         "начальник відділу:\nПекло О.О.",
         "головний бухгалтер:\nЗагребло Д.А.",
@@ -67,8 +70,8 @@ class EighthLevel : Fragment() {
 
     private fun isRightDoor() = Random.nextInt(1, doorCount) == 1
 
-    private fun getImageList(): ArrayList<LinearLayout> {
-        val imageList = ArrayList<LinearLayout>()
+    private fun getImageList(): ArrayList<FrameLayout> {
+        val imageList = ArrayList<FrameLayout>()
         for (i in captionsList.indices) {
             imageList.add(
                 createImageWithBottomCaption(
@@ -83,50 +86,49 @@ class EighthLevel : Fragment() {
         return imageList
     }
 
-    private fun createImageWithBottomCaption(image: Drawable?, text: String): LinearLayout {
-        return LinearLayout(context).apply {
-            layoutParams = LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
+    private fun createImageWithBottomCaption(image: Drawable?, text: String): FrameLayout {
+        val displayMetrics = DisplayMetrics()
+        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
+        val screenWidth = displayMetrics.widthPixels
+        val width = screenWidth * 0.25
+        val horizontalMargin = width * 0.1
+        val height = width * 2.5
+        return FrameLayout(requireContext()).apply {
+            layoutParams = FrameLayout.LayoutParams(
+                width.toInt(),
+                height.toInt()
             ).apply {
-                gravity = Gravity.CENTER
-                orientation = LinearLayout.VERTICAL
                 addView(createImage(image))
                 addView(createCaption(text))
+                setMargins(horizontalMargin.toInt(), 0, horizontalMargin.toInt(), 0)
             }
         }
     }
 
     private fun createImage(drawable: Drawable?): ImageView {
-        val displayMetrics = DisplayMetrics()
-        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-        val screenWidth = displayMetrics.widthPixels
-        val imageWidth = screenWidth * 0.25
-        val imageHeight = imageWidth * 2.5
-        val horizontalMargin = imageWidth * 0.1
         return ImageView(context).apply {
-            layoutParams = LinearLayout.LayoutParams(
-                imageWidth.toInt(),
-                imageHeight.toInt()
-            ).apply {
-                setMargins(horizontalMargin.toInt(), 0, horizontalMargin.toInt(), 0)
-            }
+            layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
             setImageDrawable(drawable)
         }
     }
 
     private fun createCaption(text: String): TextView {
         return TextView(context).apply {
-            val displayMetrics = DisplayMetrics()
-            activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-            val screenWidth = displayMetrics.widthPixels
-            layoutParams = LinearLayout.LayoutParams(
-                (screenWidth * 0.25).toInt(),
+            gravity = Gravity.CENTER
+            layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             ).apply {
                 gravity = Gravity.CENTER
-                textSize = 16f
+                textSize = 6f
                 setText(text)
+                setBackgroundColor(resources.getColor(R.color.golden))
+                setMargins(20, 0, 20, 100)
+                setPadding(20, 10, 20, 10)
+                setTextColor(resources.getColor(R.color.brown))
             }
         }
     }

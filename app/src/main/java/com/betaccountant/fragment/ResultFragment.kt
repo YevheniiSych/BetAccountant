@@ -17,7 +17,7 @@ class ResultFragment : Fragment() {
 
     companion object {
         private const val INSTAGRAM_LINK =
-            "https://instagram.com/kafedra_boo_biem?igshid=1oo5op4ztvp6"
+            "https://www.instagram.com/sumdu_kafedra_boo/"
         private const val FACEBOOK_LINK = "https://www.facebook.com/groups/buchuchet.uabs.sumdu"
         private const val SITE_LINK = "http://buchuchet.uabs.sumdu.edu.ua"
         private const val EMAIL_LINK = "mailto:boa@uabs.sumdu.edu.ua"

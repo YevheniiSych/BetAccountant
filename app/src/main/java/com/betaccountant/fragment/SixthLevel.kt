@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +54,7 @@ class SixthLevel : Fragment() {
         } else {
             StoryDialog(
                 requireContext(), getString(R.string.go_to_tax), {
+                    MediaPlayer.create(context, R.raw.win_sound).start()
                     (activity as MainActivity).showPromoVideoAndNavigateToLevel(Level.SEVENTH)
                 },
                 ContextCompat.getDrawable(

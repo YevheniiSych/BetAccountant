@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -99,6 +100,7 @@ class FifthLevel : Fragment() {
             getString(if (isBalanceLocation) R.string.help_betaccountant_reach_tax_office else R.string.balance_not_submitted),
             {
                 if (isBalanceLocation) {
+                    MediaPlayer.create(context, R.raw.win_sound).start()
                     (activity as MainActivity).navigateToLevel(Level.SIXTH)
                 }
             }, if (isBalanceLocation) {

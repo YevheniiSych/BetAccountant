@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -99,6 +100,7 @@ class ThirdLevel : Fragment() {
             getString(if (isDirectorLocation) R.string.director_found else R.string.director_not_found),
             {
                 if (isDirectorLocation) {
+                    MediaPlayer.create(context, R.raw.win_sound).start()
                     (activity as MainActivity).navigateToLevel(Level.FOURTH)
                 }
             }

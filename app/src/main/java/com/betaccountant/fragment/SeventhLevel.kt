@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class SeventhLevel : Fragment() {
                     requireContext(),
                     "Вітаємо!\n Баланс потрапив до податкової!",
                     {
+                        MediaPlayer.create(context, R.raw.win_sound).start()
                         (activity as MainActivity).navigateToLevel(Level.EIGHTH)
                     },
                     ContextCompat.getDrawable(requireContext(), R.drawable.docs_and_coins),

@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -79,6 +80,7 @@ class ImageQuestionLevelFragment : Fragment() {
     }
 
     private fun handleRightAnswer() {
+        MediaPlayer.create(context, R.raw.win_sound).start()
         val nextLevel =
             Level.values()[currentLevel!!.value] // current value because indices starts from 0
         when (currentLevel) {

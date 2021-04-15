@@ -30,12 +30,14 @@ class ToolbarView @JvmOverloads constructor(
     private var remainingLifeImg: Drawable? = null
     private var usedLifeImg: Drawable? = null
     private var timeCounterStoppedTime: Long = 0
+    val infoButton: ImageView
 
     init {
         val view = View.inflate(context, R.layout.layout_toolbar_view, this)
         label = view.toolbarLabel
         timeCounter = view.toolbarTimeCounter
         livesCounter = view.toolbarLivesCounter
+        infoButton = view.infoButton
         readParams(context)
     }
 

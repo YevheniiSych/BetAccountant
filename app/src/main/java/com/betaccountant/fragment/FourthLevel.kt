@@ -1,5 +1,6 @@
 package com.betaccountant.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class FourthLevel : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         finishGameButton.setOnClickListener {
             if (inputCode.text.toString() == ANSWER_CODE) {
+                MediaPlayer.create(context, R.raw.win_sound).start()
                 (activity as MainActivity).showPromoVideoAndNavigateToLevel(Level.FIFTH)
             } else {
                 showWrongAnswerDialog()

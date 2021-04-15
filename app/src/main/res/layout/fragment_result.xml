@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackgroundColor"
     android:fillViewport="true"
     tools:context="fragment.ResultFragment">
 
@@ -13,12 +14,13 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/resultTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/result"
             android:textColor="@color/blue_36"
             android:textSize="26sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
@@ -33,16 +35,18 @@
             android:textColorLink="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/resultTxt" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/resultHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/make_screenshot"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultTimeTxt" />
@@ -54,7 +58,7 @@
             android:text="@string/kafedra_boo_uabs"
             app:drawableStartCompat="@drawable/ic_instagram"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/resultHint" />
 
         <TextView
             android:id="@+id/facebookLink"

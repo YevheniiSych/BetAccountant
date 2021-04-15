@@ -26,7 +26,7 @@ class RulesFragment : Fragment() {
             activity?.toolbar?.livesCounterEnabled(true)
             activity?.toolbar?.resetTimeCounter()
             activity?.toolbar?.startTimeCounter()
-            (activity as MainActivity).navigateToLevel(Level.FIFTH)
+            (activity as MainActivity).navigateToLevel(Level.FIRST)
         }
     }
 }

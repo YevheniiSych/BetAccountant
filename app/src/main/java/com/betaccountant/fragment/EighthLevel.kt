@@ -4,6 +4,7 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Gravity
@@ -58,6 +59,7 @@ class EighthLevel : Fragment() {
             imageView.setOnClickListener {
                 it.visibility = View.INVISIBLE
                 if (isRightDoor()) {
+                    MediaPlayer.create(context, R.raw.win_sound).start()
                     (activity as MainActivity).toolbar?.pauseTimeCounter()
                     StoryDialog(requireContext(), getString(R.string.mission_complete),{
                         (activity as MainActivity).showPromoVideoAndNavigateToLevel()

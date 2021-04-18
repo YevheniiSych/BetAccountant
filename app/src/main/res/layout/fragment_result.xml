@@ -101,6 +101,15 @@
             app:layout_constraintTop_toBottomOf="@+id/emailLink" />
 
         <TextView
+            style="@style/contactItemStyle"
+            android:text="@string/quest_developer"
+            app:layout_constraintBottom_toTopOf="@+id/finishGameButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/locationLink" />
+
+        <TextView
             android:id="@+id/finishGameButton"
             style="@style/baseButtonStyle"
             android:layout_marginBottom="20dp"
@@ -111,6 +120,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/locationLink"
             app:layout_constraintVertical_bias="1" />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"

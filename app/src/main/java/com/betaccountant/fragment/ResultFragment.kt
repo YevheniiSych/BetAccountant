@@ -35,7 +35,7 @@ class ResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val isFromStart = arguments?.getBoolean(IS_FROM_START) ?: false
         if(!isFromStart) {
-            (activity as MainActivity).toolbar?.setLabel(getString(R.string.app_name))
+            (activity as MainActivity).toolbar?.setLabel(getString(R.string.inside_app_name))
             (activity as MainActivity).toolbar?.hideLives()
             (activity as MainActivity).toolbar?.hideTimer()
             val resultTime = (activity as MainActivity).toolbar?.getFormattedTime()

@@ -31,7 +31,7 @@ class StartFragment : Fragment() {
             activity?.toolbar?.infoButton?.visibility = View.GONE
             (activity as MainActivity).navigateToLevel(Level.SEVENTH)
         }
-        activity?.toolbar?.setLabel(R.string.app_name)
+        activity?.toolbar?.setLabel(R.string.inside_app_name)
         activity?.toolbar?.infoButton?.setOnClickListener {
             val bundle = Bundle()
             bundle.putBoolean(IS_FROM_START, true)

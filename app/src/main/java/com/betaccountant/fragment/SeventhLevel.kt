@@ -17,7 +17,7 @@ import java.util.*
 class SeventhLevel : Fragment() {
 
     companion object {
-        private const val LEVEL_ANSWER = "паспорт"
+        private const val LEVEL_ANSWER = "звіт"
     }
 
     override fun onCreateView(

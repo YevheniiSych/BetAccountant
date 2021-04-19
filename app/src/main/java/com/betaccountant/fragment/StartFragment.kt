@@ -24,8 +24,12 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startBtn.setOnClickListener {
+            activity?.toolbar?.timeCounterEnabled(true)
+            activity?.toolbar?.livesCounterEnabled(true)
+            activity?.toolbar?.resetTimeCounter()
+            activity?.toolbar?.startTimeCounter()
             activity?.toolbar?.infoButton?.visibility = View.GONE
-            (activity as MainActivity).navController?.navigate(R.id.rulesFragment)
+            (activity as MainActivity).navigateToLevel(Level.SEVENTH)
         }
         activity?.toolbar?.setLabel(R.string.app_name)
         activity?.toolbar?.infoButton?.setOnClickListener {

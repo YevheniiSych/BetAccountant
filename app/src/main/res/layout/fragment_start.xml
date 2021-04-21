@@ -20,8 +20,8 @@
         android:paddingHorizontal="20dp">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/start_image_size"
+            android:layout_height="@dimen/start_image_size"
             android:src="@drawable/accountant"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
             android:textStyle="bold"
             android:text="@string/rules"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/sp_20"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,14 +44,14 @@
 
         <TextView
             android:id="@+id/startBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/start_button_size"
+            android:layout_height="@dimen/start_button_size"
             android:background="@drawable/circle_button_bg"
             android:gravity="center"
             android:text="Старт"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="@dimen/start_button_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -7,4 +7,7 @@
     <dimen name="sp_20">20sp</dimen>
     <dimen name="third_level_image_size">130dp</dimen>
     <dimen name="sp_14">14sp</dimen>
+    <dimen name="start_image_size">150dp</dimen>
+    <dimen name="start_button_size">150dp</dimen>
+    <dimen name="start_button_text_size">26sp</dimen>
 </resources>

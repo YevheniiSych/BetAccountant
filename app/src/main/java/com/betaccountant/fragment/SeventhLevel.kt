@@ -39,8 +39,17 @@ class SeventhLevel : Fragment() {
                     ContextCompat.getDrawable(requireContext(), R.drawable.docs_and_coins),
                     true
                 ).show()
+            } else {
+                showWrongAnswerDialog()
             }
         }
+    }
+
+    private fun showWrongAnswerDialog() {
+        StoryDialog(
+            requireContext(),
+            getString(R.string.wrong_answer), {}
+        ).show()
     }
 
     private fun isRightAnswer() =

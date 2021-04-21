@@ -14,6 +14,16 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/resultHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_screenshot"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline3" />
+
+        <TextView
             android:id="@+id/resultTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +33,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintTop_toBottomOf="@id/resultHint" />
 
         <TextView
             android:id="@+id/resultTimeTxt"
@@ -41,24 +51,13 @@
             app:layout_constraintTop_toBottomOf="@+id/resultTxt" />
 
         <TextView
-            android:id="@+id/resultHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/make_screenshot"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultTimeTxt" />
-
-        <TextView
             android:id="@+id/instagramLink"
             style="@style/contactItemStyle"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:text="@string/kafedra_boo_uabs"
             app:drawableStartCompat="@drawable/ic_instagram"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultHint" />
+            app:layout_constraintTop_toBottomOf="@+id/resultTimeTxt" />
 
         <TextView
             android:id="@+id/facebookLink"
@@ -101,12 +100,13 @@
             app:layout_constraintTop_toBottomOf="@+id/emailLink" />
 
         <TextView
+            android:id="@+id/textView7"
             style="@style/contactItemStyle"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
             android:text="@string/quest_developer"
-            app:layout_constraintBottom_toTopOf="@+id/finishGameButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/locationLink" />
 
         <TextView
@@ -118,7 +118,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationLink"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
             app:layout_constraintVertical_bias="1" />
 
 
@@ -127,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.02" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -128,6 +128,10 @@ class EighthLevel : Fragment() {
     }
 
     private fun createCaption(text: String): TextView {
+        val displayMetrics = DisplayMetrics()
+        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
+        val screenWidth = displayMetrics.widthPixels
+        val marginBottom = screenWidth * 0.05
         return TextView(context).apply {
             gravity = Gravity.CENTER
             layoutParams = FrameLayout.LayoutParams(
@@ -138,7 +142,7 @@ class EighthLevel : Fragment() {
                 textSize = 6f
                 setText(text)
                 setBackgroundColor(resources.getColor(R.color.golden))
-                setMargins(20, 0, 20, 100)
+                setMargins(20, 0, 20, marginBottom.toInt())
                 setPadding(20, 10, 20, 10)
                 setTextColor(resources.getColor(R.color.brown))
             }

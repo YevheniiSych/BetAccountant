@@ -61,6 +61,7 @@
     <string name="fifth_level_start_story">Куди Be$t Бухгалтеру здавати Баланс?</string>
     <string name="third_level_wrong_answer">Продовжуй підбирати код!</string>
     <string name="quest_developer">Розробник квесту: Кафедра бухгалтерського обліку та оподаткування СумДУ</string>
+    <string name="start_title">Квест\nBe$t Бухгалтер\n«Місія - Баланс»</string>
 
     <string-array name="terms">
         <item>Капітал</item>

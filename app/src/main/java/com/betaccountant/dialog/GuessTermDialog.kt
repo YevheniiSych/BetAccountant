@@ -17,6 +17,8 @@ class GuessTermDialog(
     private val answerClick: () -> Unit
 ) : Dialog(context) {
 
+    private var wrongAnswerCount = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dialogView =
@@ -30,6 +32,13 @@ class GuessTermDialog(
                 if(isRightAnswer) {
                     answerClick()
                     this@GuessTermDialog.dismiss()
+                } else {
+                    wrongAnswerCount++
+                    if(wrongAnswerCount <= 1){
+                        showWrongAnswerDialog()
+                    } else {
+                        showRightAnswer()
+                    }
                 }
             }
         }
@@ -49,5 +58,19 @@ class GuessTermDialog(
             mixedStr.setCharAt(i2, s1)
         }
         return mixedStr.toString()
+    }
+
+    private fun showWrongAnswerDialog() {
+        StoryDialog(
+            context,
+            context.getString(R.string.wrong_answer), {}
+        ).show()
+    }
+
+    private fun showRightAnswer() {
+        StoryDialog(
+            context,
+            term, {}
+        ).show()
     }
 }

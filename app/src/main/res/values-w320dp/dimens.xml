@@ -10,4 +10,5 @@
     <dimen name="start_image_size">150dp</dimen>
     <dimen name="start_button_size">100dp</dimen>
     <dimen name="start_button_text_size">22sp</dimen>
+    <dimen name="sp_26">22sp</dimen>
 </resources>

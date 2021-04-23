@@ -1,63 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragment.StartFragment">
+    tools:context="fragment.StartFragment"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/start_screen_background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/start_screen_background" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="20dp">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="@dimen/start_image_size"
-            android:layout_height="@dimen/start_image_size"
-            android:src="@drawable/accountant"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/start_screen_background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/start_screen_background" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="@string/rules"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="20dp">
 
-        <TextView
-            android:id="@+id/startBtn"
-            android:layout_width="@dimen/start_button_size"
-            android:layout_height="@dimen/start_button_size"
-            android:background="@drawable/circle_button_bg"
-            android:gravity="center"
-            android:text="Старт"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/start_button_text_size"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/start_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_26"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="@dimen/start_image_size"
+                android:layout_height="@dimen/start_image_size"
+                android:src="@drawable/accountant"
+                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/rules"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startBtn"
+                android:layout_width="@dimen/start_button_size"
+                android:layout_height="@dimen/start_button_size"
+                android:background="@drawable/circle_button_bg"
+                android:gravity="center"
+                android:text="Старт"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/start_button_text_size"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</ScrollView>

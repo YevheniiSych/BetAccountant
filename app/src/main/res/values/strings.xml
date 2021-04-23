@@ -42,7 +42,8 @@
     <string name="kafedra_boo_uabs"><u>kafedra_boo_uabs</u></string>
     <string name="facebook_link"><u>buchuchet.uabs.sumdu</u></string>
     <string name="site_link"><u>op.biem.sumdu.edu.ua</u></string>
-    <string name="phone_number"><u>0996674401</u></string>
+    <string name="mobile_phone_number"><u>0996674401</u>, </string>
+    <string name="static_phone_number"><u>(0542)665092</u></string>
     <string name="email_link"><u>n.ovcharova@uabs.sumdu.edu.ua</u></string>
     <string name="location_link"><u>м. Суми, вул Петропавлівська, 57</u></string>
     <string name="result">Результат:</string>

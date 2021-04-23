@@ -76,11 +76,19 @@
             app:layout_constraintTop_toBottomOf="@+id/facebookLink" />
 
         <TextView
-            android:id="@+id/phoneLink"
+            android:id="@+id/mobilePhoneLink"
             style="@style/contactItemStyle"
-            android:text="@string/phone_number"
+            android:text="@string/mobile_phone_number"
             app:drawableStartCompat="@drawable/ic_phone"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/siteLink" />
+
+        <TextView
+            android:id="@+id/staticPhoneLink"
+            style="@style/contactItemStyle"
+            android:text="@string/static_phone_number"
+            app:layout_constraintBottom_toBottomOf="@+id/mobilePhoneLink"
+            app:layout_constraintStart_toEndOf="@id/mobilePhoneLink"
             app:layout_constraintTop_toBottomOf="@+id/siteLink" />
 
         <TextView
@@ -89,7 +97,7 @@
             android:text="@string/email_link"
             app:drawableStartCompat="@drawable/ic_email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneLink" />
+            app:layout_constraintTop_toBottomOf="@+id/mobilePhoneLink" />
 
         <TextView
             android:id="@+id/locationLink"

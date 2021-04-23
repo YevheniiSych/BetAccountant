@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.InputFilter
 import com.betaccountant.R
 import kotlinx.android.synthetic.main.guess_term_dialog_layout.view.*
 import java.util.*
@@ -26,6 +27,7 @@ class GuessTermDialog(
         dialogView.apply {
             guessTermDialogText.text = text
             guessTermDialogTxt.text = mixSymbols(term)
+            answerTermInput.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(term.length))
             guessTermAnswerBtn.setOnClickListener {
                 val answer = answerTermInput.text.toString().toLowerCase(Locale.ROOT)
                 val isRightAnswer = answer == term.toLowerCase(Locale.ROOT)

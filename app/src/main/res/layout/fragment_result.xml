@@ -54,7 +54,7 @@
             android:id="@+id/instagramLink"
             style="@style/contactItemStyle"
             android:layout_marginTop="20dp"
-            android:text="@string/kafedra_boo_uabs"
+            android:text="@string/sumdu_kafedra_boo"
             app:drawableStartCompat="@drawable/ic_instagram"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultTimeTxt" />

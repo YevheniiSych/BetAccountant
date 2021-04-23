@@ -6,15 +6,15 @@ import com.betaccountant.db.model.Task
 fun getTasksFromStorage() = listOf(
     Task(
         levelNumber = 1,
-        question = "Скільки Бухгалтер має активів?",
+        question = "Скільки Be\$t Бухгалтер має активів?",
         rightAnswer = "22",
-        taskDesc = "Допоможи Бухгалтеру скласти баланс."
+        taskDesc = "Допоможи Be\$t Бухгалтеру скласти баланс."
     ),
     Task(
         levelNumber = 2,
-        question = "Скільки БетБухгалтер має пасивів?",
+        question = "Скільки Be\$t Бухгалтер має пасивів?",
         rightAnswer = "22",
-        taskDesc = "Допоможи Бухгалтеру скласти баланс."
+        taskDesc = "Допоможи Be\$t Бухгалтеру скласти баланс."
     ),
     Task(
         levelNumber = 3,
@@ -29,7 +29,7 @@ fun getTasksFromStorage() = listOf(
     ),
     Task(
         levelNumber = 5,
-        question = "Куди Бухгалтеру здавати Баланс?",
+        question = "Куди Be\$t Бухгалтеру здавати Баланс?",
         taskDesc = "Щоб дізнатися куди здавати баланс, дай відповідь на коротке запитання! Будь уважний, неправильна відповідь забирає життя!"
     ),
     Task(

@@ -3,6 +3,7 @@ package com.betaccountant
 import android.app.AlertDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.betaccountant.db.AccountantDB
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         fillDB()
         setContentView(R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.fragment_container)

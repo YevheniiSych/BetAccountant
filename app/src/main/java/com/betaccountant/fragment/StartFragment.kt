@@ -29,7 +29,7 @@ class StartFragment : Fragment() {
             activity?.toolbar?.resetTimeCounter()
             activity?.toolbar?.startTimeCounter()
             activity?.toolbar?.infoButton?.visibility = View.GONE
-            (activity as MainActivity).navigateToLevel(Level.EIGHTH)
+            (activity as MainActivity).navigateToLevel(Level.FIRST)
         }
         activity?.toolbar?.setLabel(R.string.inside_app_name)
         activity?.toolbar?.infoButton?.setOnClickListener {
